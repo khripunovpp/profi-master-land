@@ -13,7 +13,7 @@ $font2_500: 'PTRootUI-Medium', sans-serif
 $font2_700: 'PTRootUI-Bold', sans-serif
 
 $blue: #5f89fc
-$green: #63af55
+$green: #01AF4D
 
 html
 	box-sizing: border-box
@@ -175,7 +175,7 @@ select
 	padding: 10px
 	border-radius: 4px
 	color: #fff
-	background-color: #63af55
+	background-color: $green
 	transition: all .2s
 	cursor: pointer
 	text-decoration: none
@@ -184,7 +184,7 @@ select
 	border: none
 	outline: none
 	font-family: $font1_700
-	border: 1px solid #63af55
+	border: 1px solid $green
 	&:hover
 		transform: scale(1.1)
 	&--ghost
@@ -225,7 +225,7 @@ select
 				.menu__sub
 					display: block
 		&.active
-			color: #63af55
+			color: $green
 			a,
 			span
 				&:hover
@@ -504,6 +504,7 @@ select
 	background-color: #f6f3fe
 	padding: 40px 0
 	opacity: .99
+	overflow: hidden
 	&::after
 		content: ''
 		position: absolute
@@ -635,6 +636,7 @@ select
 	position: relative
 	padding: 40px 0
 	opacity: .99
+	overflow: hidden
 	&::after
 		content: ''
 		position: absolute
@@ -702,10 +704,10 @@ select
 	&__box
 		width: auto
 		background-color: #fff
-		max-width: 810px
 		display: table
 		position: relative
 		overflow: hidden
+		max-width: 400px
 		margin: 0 auto
 		padding: 45px
 		box-shadow: 0 0 50px rgba(0,0,0,.5)
@@ -713,6 +715,7 @@ select
 		display: flex
 		align-items: center
 		justify-content: center
+		flex-direction: column
 	&__left,
 	&__right
 		width: 50%
@@ -772,6 +775,8 @@ select
 	&--breakdowns
 		.modal__box
 			opacity: .99
+			flex-direction: row
+			max-width: 810px
 			&::before,
 			&::after
 				content: ''
@@ -791,10 +796,138 @@ select
 				margin-top: -317px
 				right: -150px
 
+.pricelist
+	position: relative
+	background-color: #f6f3fe
+	padding: 40px 0
+	opacity: .99
+	overflow: hidden
+	&::after
+		content: ''
+		position: absolute
+		z-index: -1
+		top: 0
+		left: 50%
+		width: 2072px
+		height: 696px
+		margin-left: -1000px
+		background-image: url(../img/pricelist-bg.png)
+	&__title
+		color: #244c91
+		font-size: 35px
+		margin: 0 0 10px
+		font-family: $font2_500
+		font-weight: 500
+		strong
+			font-weight: 700
+	&__disclamer
+		font-size: 18px
+		margin: 0 0 30px
+
+
+.table
+	&__head
+		text-align: center
+		display: flex
+		flex-direction: column
+		.table
+			&__cell
+				background-color: $green
+				color: #fff
+				font-size: 28px
+				line-height: 1
+				padding: 20px
+	&__tail
+		display: flex
+		flex-direction: column
+		.table
+			&__cell
+				&::after
+					content: ''
+					position: absolute
+					bottom: 0
+					left: 20px
+					width: calc(100% - 40px)
+					height: 1px
+					background-color: #dfdfdf
+				&:nth-child(2)
+					font-weight: 700
+					color: #000
+	&__row,
+	&__spacer
+		display: table
+		width: 100%
+		table-layout: fixed
+	&__spacer
+		.table
+			&__cell
+				&::after
+					display: none
+	&__cell
+		padding: 10px 20px
+		background-color: #fff
+		font-size: 22px
+		display: table-cell
+		position: relative
+		vertical-align: middle
+		&:nth-child(2),
+		&:nth-child(3)
+			width: 270px
+			text-align: center
+			border-left: 30px solid transparent
+			background-clip: padding-box
+		button
+			color: $blue
+			padding: 12px 30px
+			border-radius: 6px
+			background-color: transparent
+			border: none
+			font-size: 18px
+			text-transform: uppercase
+			margin: 10px
+			font-weight: 700
+			cursor: pointer
+			transition: all .2s
+			&:hover
+				background-color: $blue
+				color: #fff
+	&__hidden
+		display: none
+	&__more
+		width: 100%
+		display: block
+		background-color: #fff
+		border: none
+		font-size: 20px
+		font-weight: 700
+		color: $blue
+		text-transform: uppercase
+		padding: 18px 30px
+		cursor: pointer
+		&::after
+			@extend %icon
+			content: '\e901'
+			display: inline-block
+			transform: rotate(90deg) translateX(2px)
+			margin-left: 25px
 
 
 
-
+.scheme
+	position: relative
+	padding: 40px 0
+	opacity: .99
+	&__title
+		color: #244c91
+		font-size: 35px
+		margin: 0 0 10px
+		font-family: $font2_500
+		font-weight: 500
+		strong
+			font-weight: 700
+	&__disclamer
+		font-size: 18px
+		margin: 0 0 30px
 
 //ALWAYS END
 @import "media"

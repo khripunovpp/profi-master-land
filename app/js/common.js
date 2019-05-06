@@ -242,4 +242,13 @@ $(function() {
         prevArrow: '<button type="button" class="slick-prev">пред</button>',
         nextArrow: '<button type="button" class="slick-next">след</button>'
     })
+
+    $('.table__more').on('click', function(event) {
+        event.preventDefault();
+        var hiddenItems = $(event.target).closest('.table').find('.table__hidden').html()
+
+        $('.table').find('.table__spacer').before(hiddenItems)
+
+        $(event.target).remove()
+    });
 });

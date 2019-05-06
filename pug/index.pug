@@ -179,6 +179,59 @@ html
 										use(xlink:href='#icon_10')
 								p.breakdowns__name Хочу перенести фотографии#[br] с телефона на компьютер
 
+			section.pricelist
+				.container
+					.pricelist__inner
+						h2.pricelist__title Цены на услуги #[strong сервисного центра]
+						p.pricelist__disclamer Цены указаны без учета стоимости деталей. Полная стоимость ремонта будет известна после диагностики устройства.
+						.pricelist__table.table
+							.table__head
+								.table__row
+									.table__cell Описание работы
+									.table__cell Цена
+									.table__cell Ремонт
+							.table__tail
+								.table__row
+									.table__cell Доставка и диагностика
+									.table__cell 0&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
+								.table__row
+									.table__cell Замена видеокарты на ноутбуке
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
+								.table__row
+									.table__cell Ремонт подсветки в ноутбуке
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
+								.table__row
+									.table__cell Замена клавиатуры на ноутбуке
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
+								.table__spacer
+									.table__cell
+									.table__cell
+									.table__cell
+							button.table__more Показать еще
+							.table__hidden
+								.table__row
+									.table__cell fdbzdf
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
+								.table__row
+									.table__cell fdbzdf
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
+								.table__row
+									.table__cell fdbzdf
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
+
+			section.scheme
+				.container
+					.scheme__inner
+						h2.scheme__title Как #[strong мы работаем]
+						p.scheme__disclamer Перед началом работ мы сначала делаем первичную диагностику и проверяем с помощью профессионального программного обеспечения. Все мастера со стажем более 5 лет.
+
 
 		.modal.modal--breakdowns#breakdowns
 			table.modal__wrapper
@@ -202,6 +255,19 @@ html
 										button.modal__form-btn.btn.js-submit Отправить
 										a(href="").modal__form-privacypolicy Политика конфиденциальности
 
+		.modal#callback
+			table.modal__wrapper
+				tbody
+					tr
+						td.modal__inner
+							.modal__box
+								button.modal__close
+								p.modal__caption Оформите онлайн заказ сейчас и получите скидку на ремонт #[strong 25%]
+								form.modal__form(action="", method="post")
+									input(type="tel", name="phone", placeholder="Ваше телефон", required).modal__form-field.field
+									input(type="hidden", name="form", value="popup")
+									button.modal__form-btn.btn.js-submit Отправить
+									a(href="").modal__form-privacypolicy Политика конфиденциальности			
 
 
 		include _sprite
