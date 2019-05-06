@@ -35,6 +35,8 @@ body
 	font-size: 14px
 	background-color: #fff
 	color: #575757
+	&.fixed
+		overflow: hidden
 
 img
 	max-width: 100%	
@@ -629,7 +631,165 @@ select
 
 
 
+.breakdowns
+	position: relative
+	padding: 40px 0
+	opacity: .99
+	&::after
+		content: ''
+		position: absolute
+		z-index: -1
+		top: 50%
+		left: 50%
+		width: 2170px
+		height: 750px
+		margin-left: -1110px
+		margin-top: -350px
+		background-image: url(../img/breakdowns-bg.png)
+	&__title
+		color: #244c91
+		font-size: 35px
+		margin: 0 0 30px
+		font-family: $font2_500
+		font-weight: 500
+		strong
+			font-weight: 700
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -15px
+		justify-content: center
+	&__item
+		background-color: #f6f3fe
+		margin: 15px
+		text-align: center
+		flex: 1 1 20%
+		padding: 25px 15px
+		cursor: pointer
+		.icon
+			width: 70px
+			height: 70px
+			fill: $blue
+		&:hover
+			background-color: $blue
+			color: #fff
+			.icon
+				fill: #fff
+	&__name
+		margin: 20px 0 0
+		font-size: 19px
 
+
+.hidden
+	display: none
+
+.modal
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 8
+	overflow: auto
+	background-color: rgba(0, 0, 0, 0.5)
+	display: none
+	&__wrapper
+		height: 100%
+		width: 100%
+	&__inner
+		vertical-align: middle
+		padding: 15px
+	&__box
+		width: auto
+		background-color: #fff
+		max-width: 810px
+		display: table
+		position: relative
+		overflow: hidden
+		margin: 0 auto
+		padding: 45px
+		box-shadow: 0 0 50px rgba(0,0,0,.5)
+		text-align: center
+		display: flex
+		align-items: center
+		justify-content: center
+	&__left,
+	&__right
+		width: 50%
+	&__left
+		padding-right: 22px
+	&__right
+		padding-left: 22px
+	&__close
+		position: absolute
+		top: 15px
+		right: 15px
+		width: 20px
+		height: 20px
+		padding: 0
+		border: none
+		cursor: pointer
+		background-color: transparent
+		&::after
+			@extend %icon
+			content: '\e903'
+			font-size: 18px
+			color: #244c91
+	&__caption
+		color: #234c90
+		font-size: 24px
+		margin: 0 0 25px
+	&__form
+		&-field
+			background-color: #f6f3fe
+		&-privacypolicy
+			font-size: 12px
+			color: #737373
+			display: block
+			margin-top: 13px
+			&:hover
+				color: #000
+	&__breakdown
+		display: inline-block
+		font-size: 0
+		&-icon
+			background-color: #f6f3fe
+			width: 110px
+			height: 110px
+			display: inline-block
+			.icon
+				max-width: 60px
+				height: 100%
+				fill: $blue
+		&-name
+			font-size: 24px
+			margin: 28px 0
+		&-price
+			color: $blue
+			font-size: 34px
+			margin: 0
+			font-weight: 700
+	&--breakdowns
+		.modal__box
+			opacity: .99
+			&::before,
+			&::after
+				content: ''
+				position: absolute
+				z-index: -1
+			&::before
+				background-image: url(../img/modal-breakdowns-bg-pic-2.png)
+				width: 112px
+				height: 112px
+				bottom: 0
+				left: 0
+			&::after
+				background-image: url(../img/modal-breakdowns-bg-pic-1.png)
+				width: 635px
+				height: 635px
+				top: 50%
+				margin-top: -317px
+				right: -150px
 
 
 

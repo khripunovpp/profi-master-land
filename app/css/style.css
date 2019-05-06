@@ -8,7 +8,7 @@
 }
 
 .header__burger::after, .reviews__stars i::before, .reviews__recomend::before, .reviews .slick-prev::before,
-.reviews .slick-next::before {
+.reviews .slick-next::before, .modal__close::after {
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -57,6 +57,10 @@ body {
   font-size: 14px;
   background-color: #fff;
   color: #575757;
+}
+
+body.fixed {
+  overflow: hidden;
 }
 
 img {
@@ -893,6 +897,244 @@ select {
   -webkit-transform: translateX(5px);
   -ms-transform: translateX(5px);
   transform: translateX(5px);
+}
+
+.breakdowns {
+  position: relative;
+  padding: 40px 0;
+  opacity: .99;
+}
+
+.breakdowns::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 2170px;
+  height: 750px;
+  margin-left: -1110px;
+  margin-top: -350px;
+  background-image: url(../img/breakdowns-bg.png);
+}
+
+.breakdowns__title {
+  color: #244c91;
+  font-size: 35px;
+  margin: 0 0 30px;
+  font-family: "PTRootUI-Medium", sans-serif;
+  font-weight: 500;
+}
+
+.breakdowns__title strong {
+  font-weight: 700;
+}
+
+.breakdowns__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.breakdowns__item {
+  background-color: #f6f3fe;
+  margin: 15px;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 20%;
+  -ms-flex: 1 1 20%;
+  flex: 1 1 20%;
+  padding: 25px 15px;
+  cursor: pointer;
+}
+
+.breakdowns__item .icon {
+  width: 70px;
+  height: 70px;
+  fill: #5f89fc;
+}
+
+.breakdowns__item:hover {
+  background-color: #5f89fc;
+  color: #fff;
+}
+
+.breakdowns__item:hover .icon {
+  fill: #fff;
+}
+
+.breakdowns__name {
+  margin: 20px 0 0;
+  font-size: 19px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal__wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.modal__inner {
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.modal__box {
+  width: auto;
+  background-color: #fff;
+  max-width: 810px;
+  display: table;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 45px;
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.modal__left, .modal__right {
+  width: 50%;
+}
+
+.modal__left {
+  padding-right: 22px;
+}
+
+.modal__right {
+  padding-left: 22px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.modal__close::after {
+  content: '\e903';
+  font-size: 18px;
+  color: #244c91;
+}
+
+.modal__caption {
+  color: #234c90;
+  font-size: 24px;
+  margin: 0 0 25px;
+}
+
+.modal__form-field {
+  background-color: #f6f3fe;
+}
+
+.modal__form-privacypolicy {
+  font-size: 12px;
+  color: #737373;
+  display: block;
+  margin-top: 13px;
+}
+
+.modal__form-privacypolicy:hover {
+  color: #000;
+}
+
+.modal__breakdown {
+  display: inline-block;
+  font-size: 0;
+}
+
+.modal__breakdown-icon {
+  background-color: #f6f3fe;
+  width: 110px;
+  height: 110px;
+  display: inline-block;
+}
+
+.modal__breakdown-icon .icon {
+  max-width: 60px;
+  height: 100%;
+  fill: #5f89fc;
+}
+
+.modal__breakdown-name {
+  font-size: 24px;
+  margin: 28px 0;
+}
+
+.modal__breakdown-price {
+  color: #5f89fc;
+  font-size: 34px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.modal--breakdowns .modal__box {
+  opacity: .99;
+}
+
+.modal--breakdowns .modal__box::before, .modal--breakdowns .modal__box::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.modal--breakdowns .modal__box::before {
+  background-image: url(../img/modal-breakdowns-bg-pic-2.png);
+  width: 112px;
+  height: 112px;
+  bottom: 0;
+  left: 0;
+}
+
+.modal--breakdowns .modal__box::after {
+  background-image: url(../img/modal-breakdowns-bg-pic-1.png);
+  width: 635px;
+  height: 635px;
+  top: 50%;
+  margin-top: -317px;
+  right: -150px;
 }
 
 /* Desktop-frist */

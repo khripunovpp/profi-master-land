@@ -118,7 +118,7 @@ var ajax = function(form) {
 
         } else {
             popup.find('.response__title').text('Ваша заявка принята')
-            yaCounter53182684.reachGoal(form);
+            // yaCounter53182684.reachGoal(form);
         }
 
         $('.response').fadeIn();
@@ -132,8 +132,105 @@ var ajax = function(form) {
 
 }
 
+
+var modals = function() {
+
+    var overlay
+
+    $('.breakdowns__item').on('click', function(event) {
+        event.preventDefault();
+
+        showBreakdown(event)
+        open('#breakdowns')
+    });
+
+    $('.js-modal').on('click', function(event) {
+        event.preventDefault();
+
+        open('#callback')
+    });
+
+    $('.modal__close').on('click', function(event) {
+        event.preventDefault();
+
+        close.call(this)
+    });
+
+    function open(box) {
+        overlay = $(box)
+        box = overlay.find('.modal__box')
+
+        $('body').addClass('fixed')
+
+        overlay.fadeIn(300);
+        $({ scale: .5 }).animate({
+            scale: 1
+        }, {
+            duration: 300,
+            step: function(now, fx) {
+                $(box).css({
+                    'transform': 'scale(' + now + ')'
+                })
+            }
+        }, 'linear');
+    }
+
+    function close() {
+        overlay = $(this).closest('.modal')
+        box = overlay.find('.modal__box')
+
+        $('body').removeClass('fixed')
+
+        $({ scale: 1 }).animate({
+            scale: 0
+        }, {
+            duration: 300,
+            step: function(now, fx) {
+                $(box).css({
+                    'transform': 'scale(' + now + ')'
+                })
+            }
+        }, 'linear');
+
+        overlay.fadeOut(300)
+    }
+
+    function success() {
+        overlay = $(this).closest('.modal')
+        box = overlay.find('.modal__box')
+
+        $({ scale: 1 }).animate({
+            scale: 1.5
+        }, {
+            duration: 300,
+            step: function(now, fx) {
+                $(box).css({
+                    'transform': 'scale(' + now + ')'
+                })
+            }
+        }, 'linear');
+
+        overlay.fadeOut(300)
+    }
+
+    function showBreakdown(e) {
+        var item = $(e.target).closest('.breakdowns__item')
+
+        var icon = item.find('.breakdowns__icon').html(),
+            name = item.find('.breakdowns__name').text(),
+            price = item.attr('data-price');
+
+        var distContainer = $('#breakdowns')
+
+        distContainer.find('.modal__breakdown-icon').html(icon)
+        distContainer.find('.modal__breakdown-name').html(name)
+        distContainer.find('.modal__breakdown-price span').html(price)
+    }
+}
+
 $(function() {
     menu()
+    modals()
 
     $('.reviews__list').slick({
         slidesToShow: 3,

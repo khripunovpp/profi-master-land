@@ -123,11 +123,88 @@ html
 								span.reviews__stars.reviews__stars--4 #[i] #[i] #[i] #[i] #[i]
 								p.reviews__text Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, quidem, neque. Sunt, dolores enim ad.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, quidem, ning elit. Repudiandae, quidem, neque. Sunt, dolores enim ad.
 
+			section.breakdowns
+				.container
+					.breakdowns__inner
+						h2.breakdowns__title Определите вашу #[strong поломку]
+						.breakdowns__list
+							.breakdowns__item(data-price="455")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_1')
+								p.breakdowns__name Не загружается
+							.breakdowns__item(data-price="43455")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_2')
+								p.breakdowns__name Выдает ошибку
+							.breakdowns__item(data-price="34")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_3')
+								p.breakdowns__name Поймал вирус
+							.breakdowns__item(data-price="64")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_4')
+								p.breakdowns__name Компьютер тормозит и греется
+							.breakdowns__item(data-price="455")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_5')
+								p.breakdowns__name Не проигрывается видео на компьютере
+							.breakdowns__item(data-price="54")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_6')
+								p.breakdowns__name Закончилось место на диске
+							.breakdowns__item(data-price="23")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_7')
+								p.breakdowns__name Пропал звук
+							.breakdowns__item(data-price="455")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_8-01')
+								p.breakdowns__name Нет сигнала
+							.breakdowns__item(data-price="756")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_9')
+								p.breakdowns__name Достали всплывающие окна#[br] и рекламные баннеры
+							.breakdowns__item(data-price="123")
+								.breakdowns__icon
+									svg.icon
+										use(xlink:href='#icon_10')
+								p.breakdowns__name Хочу перенести фотографии#[br] с телефона на компьютер
+
+
+		.modal.modal--breakdowns#breakdowns
+			table.modal__wrapper
+				tbody
+					tr
+						td.modal__inner
+							.modal__box
+								button.modal__close
+								.modal__left
+									.modal__breakdown
+										.modal__breakdown-icon
+											svg.icon
+												use(xlink:href='#icon_9')
+										p.modal__breakdown-name Пропал звук
+										p.modal__breakdown-price ~&nbsp;#[span 250]&nbsp;&#8381;
+								.modal__right
+									p.modal__caption Оформите онлайн заказ сейчас и получите скидку на ремонт #[strong 25%]
+									form.modal__form(action="", method="post")
+										input(type="tel", name="phone", placeholder="Ваше телефон", required).modal__form-field.field
+										input(type="hidden", name="form", value="popup")
+										button.modal__form-btn.btn.js-submit Отправить
+										a(href="").modal__form-privacypolicy Политика конфиденциальности
 
 
 
-
-
+		include _sprite
 
 		script(src="js/slick.min.js")
 		script(src="js/jquery.sticky.js")
