@@ -1,17 +1,3 @@
-var Util = {
-    randomInteger: function(min, max) {
-        var rand = min + Math.random() * (max - min)
-        rand = Math.round(rand);
-        return rand;
-    },
-    scrollToEl: function(el, offset) {
-        $("html,body").animate({ scrollTop: el.offset().top + (offset || 0) }, 500);
-    },
-    trimString: function(string) {
-        return string.split(' ').join('');
-    }
-}
-
 var menu = function() {
 
     $('.js-menuToggle').on('click', toggle);
@@ -144,7 +130,7 @@ var modals = function() {
         open('#breakdowns')
     });
 
-    $('.js-modal').on('click', function(event) {
+    $('body').on('click', '.js-modal', function(event) {
         event.preventDefault();
 
         open('#callback')

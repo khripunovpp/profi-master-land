@@ -7,7 +7,7 @@ html
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
 		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
-		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:400,700,900")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900")
 		link(rel='stylesheet', href='css/style.css')
 		style.
 			*,
@@ -231,6 +231,33 @@ html
 					.scheme__inner
 						h2.scheme__title Как #[strong мы работаем]
 						p.scheme__disclamer Перед началом работ мы сначала делаем первичную диагностику и проверяем с помощью профессионального программного обеспечения. Все мастера со стажем более 5 лет.
+						.scheme__list
+							.scheme__item.scheme__item--1
+								.scheme__item-icon
+								p.scheme__item-title Заказ
+								p.scheme__item-description Вы делаете заказ по телефону или онлайн через наш сайт
+								p.scheme__item-num 01
+							.scheme__item.scheme__item--2
+								.scheme__item-icon
+								p.scheme__item-title Диагностика
+								p.scheme__item-description В срок от 30 минут мастер приезжает к вам и производит диагностику
+								p.scheme__item-num 02
+							.scheme__item.scheme__item--3
+								.scheme__item-icon
+								p.scheme__item-title Стоимость
+								p.scheme__item-description Если вас устраивает стоимость услуг, мы приступаем к работам
+								p.scheme__item-num 03
+							.scheme__item.scheme__item--4
+								.scheme__item-icon
+								p.scheme__item-title Исправная техника
+								p.scheme__item-description По окончании работ вы получаете исправную технику и бланк БСО
+								p.scheme__item-num 04
+						form.scheme__form(action="", method="post")
+							p.scheme__form-caption Вызовите мастера прямо#[br] сейчас и получите #[strong скидку]
+							p.scheme__form-discount 25%
+							input(type="tel", name="phone", placeholder="Ваше телефон", required).scheme__form-field.field
+							input(type="hidden", name="form", value="shcheme")
+							button.scheme__form-btn.btn.js-submit Получить скидку
 
 
 		.modal.modal--breakdowns#breakdowns

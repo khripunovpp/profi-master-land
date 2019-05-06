@@ -27,6 +27,13 @@
 }
 
 @font-face {
+  font-family: "PTRootUI-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/PTRootUI/PTRootUI-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/PTRootUI/PTRootUI-Light.woff") format("woff"), url("../fonts/PTRootUI/PTRootUI-Light.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "PTRootUI-Medium";
   font-style: normal;
   font-weight: normal;

@@ -11,6 +11,7 @@ $font1: 'InterUI-Regular', sans-serif
 
 $font2_500: 'PTRootUI-Medium', sans-serif
 $font2_700: 'PTRootUI-Bold', sans-serif
+$font2_300: 'PTRootUI-Light', sans-serif
 
 $blue: #5f89fc
 $green: #01AF4D
@@ -405,7 +406,8 @@ select
 				height: 90px
 				margin-top: -45px
 				margin-left: -45px
-				background-image: url(../img/step-circle.png)
+				background-image: url(../img/circle.png)
+				background-size: cover
 		&:nth-child(even)
 			i::after
 				transform: rotate(180deg)
@@ -525,11 +527,11 @@ select
 		strong
 			font-weight: 700
 	&__list
-		margin: 0 -30px
+		margin: 0 -15px
 		position: relative
 	&__item
 		float: left
-		margin: 0 30px
+		margin: 0 15px
 		padding: 35px
 		background-color: #fff
 	&__text
@@ -613,7 +615,7 @@ select
 			color: $blue
 			transition: all .1s
 	.slick-prev
-		left: 30px
+		left: 15px
 		padding-left: 20px
 		&::before
 			left: 0
@@ -622,13 +624,15 @@ select
 			&::before
 				transform: scale(-1,1) translateX(5px)
 	.slick-next
-		right: 30px
+		right: 15px
 		padding-right: 20px
 		&::before
 			right: 0
 		&:hover
 			&::before
 				transform: translateX(5px)
+	.slick-disabled
+		visibility: hidden
 
 
 
@@ -659,7 +663,7 @@ select
 	&__list
 		display: flex
 		flex-wrap: wrap
-		margin: 0 -15px
+		margin: -15px
 		justify-content: center
 	&__item
 		background-color: #f6f3fe
@@ -789,12 +793,13 @@ select
 				bottom: 0
 				left: 0
 			&::after
-				background-image: url(../img/modal-breakdowns-bg-pic-1.png)
+				background-image: url(../img/circle.png)
 				width: 635px
 				height: 635px
 				top: 50%
 				margin-top: -317px
 				right: -150px
+				opacity: .2
 
 .pricelist
 	position: relative
@@ -928,6 +933,141 @@ select
 	&__disclamer
 		font-size: 18px
 		margin: 0 0 30px
+	&__list
+		display: flex
+		margin: -15px
+	&__item
+		margin: 15px
+		border: 1px solid #c5d4e7
+		text-align: center
+		padding: 20px 20px 120px
+		flex: 1 1 20%
+		overflow: hidden
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+		&-title
+			font-weight: 500
+			color: #000
+			font-size: 22px
+			margin: 10px 0
+			font-family: $font2_500
+		&-description
+			font-size: 18px
+			font-family: $font2_500
+			margin: 0
+		&-icon
+			&::before
+				@extend %icon
+				font-size: 60px
+				color: $blue
+		&-num
+			font-weight: 300
+			font-size: 150px
+			line-height: .7
+			margin: 0
+			color: #244c91
+			position: absolute
+			bottom: -15px
+			left: 50%
+			transform: translateX(-50%)
+		&--1
+			&::before
+				background-image: url(../img/scheme-item-decor-1.png)
+				width: 87px
+				height: 87px
+				top: 0
+				left: 3px
+			.scheme__item
+				&-icon
+					&::before
+						content: '\e908'
+		&--2
+			&::before
+				background-image: url(../img/scheme-item-decor-1.png)
+				width: 87px
+				height: 87px
+				transform: rotate(-90deg)
+				top: 40px
+				right: -20px
+			.scheme__item
+				&-icon
+					&::before
+						content: '\e909'
+		&--3	
+			&::before
+				background-image: url(../img/scheme-item-decor-2.png)
+				width: 181px
+				height: 181px
+				transform: rotate(-90deg)
+				top: -60px
+				right: -120px
+			.scheme__item
+				&-icon
+					&::before
+						content: '\e906'
+		&--4
+			&::before
+				background-image: url(../img/scheme-item-decor-2.png)
+				width: 181px
+				height: 181px
+				top: -135px
+				left: 50%
+				margin-left: -90px
+			.scheme__item
+				&-icon
+					&::before
+						content: '\e907'
+	&__form
+		background-color: #244c91
+		padding: 25px 0 25px 35px
+		align-items: center
+		justify-content: space-between
+		display: flex
+		overflow: hidden
+		margin-top: 30px
+		&-caption
+			font-size: 20px
+			font-family: $font2_500
+			font-weight: 500
+			color: #fff
+		&-field
+			max-width: 270px
+			margin-left: auto
+		&-btn
+			margin-top: 0
+			margin-left: 25px
+			border-radius: 6px 0 0 6px
+			max-width: 270px
+		&-discount
+			font-size: 70px
+			font-weight: 700
+			line-height: 1
+			margin: 0 0 0 auto
+			color: #fff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //ALWAYS END
 @import "media"
