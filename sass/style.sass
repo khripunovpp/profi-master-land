@@ -165,6 +165,8 @@ select
 		display: block
 		font-weight: 600
 		margin-top: 5px
+		&:hover
+			color: #5f89fc
 
 
 .bage
@@ -1170,16 +1172,177 @@ select
 				color: inherit
 
 
+.advantages
+	position: relative
+	padding: 40px 0
+	opacity: .99
+	&__title
+		color: #244c91
+		font-size: 35px
+		margin: 0 0 30px
+		font-family: $font2_500
+		font-weight: 500
+		strong
+			font-weight: 700
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -20px -20px
+		text-align: center
+	&__item
+		flex: 1 1 45%
+		margin: 20px
+		&-caption
+			font-family: $font2_700
+			font-weight: 700
+			color: #000
+			margin: 15px 0
+			font-size: 30px
+		&-description
+			font-size: 18px
+			max-width: 80%
+			margin: 0 auto
+		&-icon
+			&::before
+				@extend %icon
+				font-size: 80px
+				color: $blue
+		&--1
+			.advantages__item-icon::before
+				content: '\e90d'
+		&--2
+			.advantages__item-icon::before
+				content: '\e90e'
+		&--3
+			.advantages__item-icon::before
+				content: '\e90f'
+		&--4
+			.advantages__item-icon::before
+				content: '\e90a'
+		&--5
+			.advantages__item-icon::before
+				content: '\e90b'
+		&--6
+			.advantages__item-icon::before
+				content: '\e90c'
 
 
 
+.about
+	position: relative
+	padding: 40px 0
+	opacity: .99
+	background-color: #f6f3fe
+	&__title
+		color: #244c91
+		font-size: 35px
+		margin: 0 0 30px
+		font-family: $font2_500
+		font-weight: 500
+		strong
+			font-weight: 700
+	&__text
+		font-size: 20px
+		overflow: auto
+	&__pic
+		float: left
+		margin: 0 40px 0 0
+
+.contacts
+	position: relative
+	padding: 40px 0
+	&__title
+		color: #244c91
+		font-size: 35px
+		margin: 0 0 30px
+		font-family: $font2_500
+		font-weight: 500
+		strong
+			font-weight: 700
+	&__text
+		font-size: 20px
+		overflow: auto
+	&__inner
+		padding-right: calc(50% + 30px)
+		position: relative
+	&__map
+		position: absolute
+		top: 0
+		right: 0
+		height: calc(100% + 40px)
+		width: 50%
+		padding-left: 30px
+		border: none
+	&__item
+		color: $blue
+		font-size: 22px
+		a
+			color: inherit
+			text-decoration: none
+			&:hover
+				color: #000
+		small
+			font-size: 14px
+			display: inline-block
+			margin-top: 12px
+			color: #575757
+		&+&
+			margin-top: 20px
 
 
 
-
-
-
-
+.footer
+	background-color: #244c91
+	padding: 20px 0 30px
+	color: #fff
+	&__top,
+	&__form,
+	&__small
+		display: flex
+		align-items: center
+	&__phone
+		margin-left: auto
+		font-family: $font1_700
+		text-transform: lowercase
+		font-size: 15px
+		line-height: 1
+		font-weight: 500
+		text-align: right
+		a
+			font-size: 25px
+			text-decoration: none
+			color: inherit
+			display: block
+			font-weight: 600
+			margin-top: 5px
+			&:hover
+				color: #74a3f5
+	&__form
+		margin: 30px 0
+		&-field,
+		&-btn
+			max-width: 270px
+		&-btn
+			margin-top: 0
+			margin-left: 30px
+		&-field
+			margin-left: auto
+		&-caption
+			font-size: 16px
+			color: #fff
+			margin: 0
+			padding-right: 12%
+	&__copy,
+	&__privacepolicy
+		font-size: 12px
+		width: 50%
+	&__privacepolicy
+		text-align: right
+		padding-left: 50px
+		color: inherit
+		text-decoration: none
+		&:hover
+			text-decoration: underline
 
 
 //ALWAYS END
