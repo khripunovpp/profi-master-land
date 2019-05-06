@@ -109,7 +109,7 @@ select
 .field
 	width: 100%
 	color: #010101
-	font-size: 18px
+	font-size: 16px
 	border-radius: 6px
 	border: none
 	padding: 16px
@@ -444,13 +444,15 @@ select
 	&__list
 		display: flex
 		justify-content: space-between
+		margin: -15px
 	&__item
-		flex-basis: 360px
+		flex: 1 1 30%
 		border: 1px solid #c5d4e7
 		padding: 30px 30px 200px
 		background-repeat: no-repeat
 		text-align: center
 		background-color: #fff
+		margin: 15px
 		&-title
 			font-size: 35px
 			font-weight: 700
@@ -920,7 +922,7 @@ select
 
 .scheme
 	position: relative
-	padding: 40px 0
+	padding: 40px 0 0
 	opacity: .99
 	&__title
 		color: #244c91
@@ -1028,33 +1030,144 @@ select
 		overflow: hidden
 		margin-top: 30px
 		&-caption
-			font-size: 20px
+			font-size: 19px
 			font-family: $font2_500
 			font-weight: 500
 			color: #fff
+			text-transform: uppercase
+			padding-right: 15px
+			position: relative
+			z-index: 1
+			width: 30%
 		&-field
 			max-width: 270px
 			margin-left: auto
+			z-index: 1
 		&-btn
 			margin-top: 0
 			margin-left: 25px
 			border-radius: 6px 0 0 6px
 			max-width: 270px
+			z-index: 1
 		&-discount
 			font-size: 70px
-			font-weight: 700
+			font-weight: 500
 			line-height: 1
 			margin: 0 0 0 auto
 			color: #fff
+			position: relative
+			opacity: .99
+			&::after
+				content: ''
+				width: 200px
+				height: 200px
+				position: absolute
+				z-index: -1
+				top: 50%
+				left: 50%
+				margin-top: -100px
+				margin-left: -100px
+				background-image: url(../img/circle.png)
+				background-size: cover
 
 
 
 
 
 
-
-
-
+.popular
+	position: relative
+	padding: 40px 0 0
+	opacity: .99
+	&__title
+		color: #244c91
+		font-size: 35px
+		margin: 0 0 30px
+		font-family: $font2_500
+		font-weight: 500
+		strong
+			font-weight: 700
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 1px 0 0 1px
+	&__item
+		flex: 1 1 25%
+		border: 1px solid #c5d4e7
+		margin-top: -1px
+		margin-left: -1px
+		padding: 30px 30px 95px
+		flex-direction: column
+		display: flex
+		position: relative
+		overflow: hidden
+		&-caption
+			font-size: 22px
+			color: #244c91
+			font-weight: 700
+			font-family: $font2_700
+			line-height: 1.2
+			margin: 0 0 17px
+		&-pic
+			position: absolute
+			left: 240px
+			bottom: 10px
+		&-services
+			font-size: 16px
+			li
+				padding-left: 25px
+				position: relative
+				&::before
+					content: ''
+					position: absolute
+					top: 6px
+					left: 0
+					width: 10px
+					height: 10px
+					background-color: $green
+			li+li
+				margin-top: 5px
+		&-text
+			font-size: 16px
+			margin: 0
+		&-field
+			margin-top: 25px
+		&-btn
+			font-size: 18px
+			padding: 15px
+		&-price
+			position: absolute
+			bottom: 35px
+			left: 45px
+			font-weight: 700
+			font-family: $font2_700
+			color: $blue
+			font-size: 24px
+			margin: 0
+			padding: 0 10px
+		&-num
+			position: absolute
+			color: #d3dbe9
+			margin: 0
+			bottom: -12px
+			right: -10px
+			font-weight: 700
+			font-family: $font2_700
+			line-height: .8
+			font-size: 99px
+		&--1
+			flex-basis: 50%
+			box-shadow: inset 0 0 0 3px #c5d4e7
+			.popular__item-price
+				background-color: $blue
+				color: #fff
+		&--7
+			padding: 30px
+			border-color: #244c91
+			background-color: #244c91
+			color: #fff
+			.popular__item-caption
+				color: inherit
 
 
 
