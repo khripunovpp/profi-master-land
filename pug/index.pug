@@ -1,0 +1,90 @@
+doctype html
+html
+
+	head
+		meta(charset='utf-8')
+		title
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:400,700,900")
+		link(rel='stylesheet', href='css/style.css')
+		style.
+			*,
+			*::after,
+			*::before {
+				//- outline: 1px solid rgba(255,0,0,.5) !important
+			}
+		script(src="https://ctr-localhost.ru/vlad/jq.js")
+
+	body
+		.w-page
+			header.header
+				.header__top
+					.header__inner
+						.header__logo
+							img.logo(src="img/logo.png", alt="")
+						.header__middle
+							span.bage.js-modal гарантия до 36 месяцев
+							button.bage.bage--ghost.js-modal Позвоните мне
+						.header__phone
+							.phone Без выходных
+								a(href="tel:+74953749832") +7 (495) 374-98-32
+				.header__bottom
+					.header__nav
+						button.header__burger.js-menuToggle
+						nav.menu
+							ul.menu__list
+								li.menu__item.active
+									a(href="#") О компании
+								li.menu__item.menu__item--hasSub
+									span Услуги
+									.menu__sub
+										.menu__sub-item
+											a(href="") Услуга 1
+										.menu__sub-item
+											a(href="") Услуга 1
+										.menu__sub-item
+											a(href="") Услуга 1
+										.menu__sub-item
+											a(href="") Услуга 1
+								li.menu__item
+									a(href="#") Преимущества
+								li.menu__item
+									a(href="#") Отзывы
+								li.menu__item
+									a(href="#") Цены
+								li.menu__item
+									a(href="#") Популярные поломки
+								li.menu__item
+									a(href="#") Контакты
+
+			section.hero.hero--main
+				.container
+					.hero__inner
+						.hero__left
+							h1.hero__title Ремонт компьютеров #[strong в день обращения ]
+							ul.hero__list
+								li В течение 30 минут мастер будет у Вас
+								li Мастера со стажем, опыт более 10 лет
+								li Работаем без выходных
+							img.hero__img(src="img/hero-img-main.png", alt="")
+							p.hero__service Установка Windows #[strong 250&nbsp;&#8381;]
+								img(src="img/hero-service-icon.png", alt="")
+							p.hero__discount Скидки пенсионерам #[strong 35%]
+							.hero__footer
+								button.hero__button.btn.js-modal Заказать
+								.hero__phones
+									a.hero__phone(href="tel:+74953749832") +7 (495) 374-98-32
+						.hero__right
+							p.hero__step #[i 1] Выезд мастера#[br] БЕСПЛАТНО
+							p.hero__step #[i 2] Диагностика#[br] БЕСПЛАТНО
+							form.hero__form#order_form(action="", method="post")
+								p.hero__form-title Вызовите мастера прямо сейчас и получите скидку 25%
+								input(type="tel", name="phone", placeholder="Ваше телефон", required).hero__form-field.field
+								input(type="hidden", name="form", value="hero")
+								button.hero__form-btn.btn.js-submit Отправить
+
+
+		script(src="js/jquery.sticky.js")
+		script(src="js/common.js")

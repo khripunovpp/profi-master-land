@@ -1,0 +1,95 @@
+@import "bourbon"
+
+
+/* Desktop-frist */
+@media only screen and (max-width : 991px)
+	.hide-on-mobile
+		display: none !important
+
+	.container
+		max-width: 500px
+
+	.header
+		background-color: #fff
+		z-index: 5
+		position: fixed
+		left: 0
+		top: 0
+		width: 100%
+		&__inner,
+		&__logo,
+		&__phone
+			display: block
+			width: auto
+		&__middle
+			display: none
+		&__top
+			padding: 0
+			border: none
+		&__inner
+			padding: 0
+		&__logo
+			padding: 15px
+			font-size: 0
+		&__nav
+			padding: 0
+		&__burger
+			position: absolute
+			z-index: 1
+			display: block
+			background-color: transparent
+			top: 15px
+			right: 15px
+			border: none
+			padding: 0
+			font-size: 25px
+			color: $blue
+			&::after
+				content: '\e902'
+			&.open
+				&::after
+					content: '\e903'
+		.logo
+			max-width: 190px
+		.phone
+			text-align: center
+			font-size: 0
+			padding: 8px
+			background-color: #63af55
+			a
+				font-size: 20px
+				color: #fff
+				margin: 0
+
+	.menu
+		display: none
+		padding: 20px 0
+		&__list
+			display: block
+			margin: 0
+			transform: none
+		&__item
+			a, span
+				display: block
+				padding: 10px 15px
+				background-color: #eef2fd
+			&+&
+				margin-top: 5px
+			&--hasSub
+				&:hover
+					.menu__sub
+						display: none
+		&__sub
+			position: relative
+			left: auto
+			margin-left: auto
+			width: auto
+			&-item
+				a
+					padding: 10px 15px
+					background-color: #eef2fd
+				&+&
+					margin-top: 5px
+		&__footer
+			display: block
+			padding: 0 15px 20px
