@@ -134,4 +134,15 @@ var ajax = function(form) {
 
 $(function() {
     menu()
+
+    $('.reviews__list').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        adaptiveHeight: true,
+        infinite: false,
+        prevArrow: '<button type="button" class="slick-prev">пред</button>',
+        nextArrow: '<button type="button" class="slick-next">след</button>'
+    })
 });
