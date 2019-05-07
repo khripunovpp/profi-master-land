@@ -1,7 +1,18 @@
 @import "bourbon"
 
 
-/* Desktop-frist */
+@media only screen and (max-width : 1150px)
+	.hero__service,
+	.hero__discount
+		display: table
+	.hero__discount
+		margin: 0
+		margin-top: 20px
+	.hero--main .hero__img
+		margin-right: -550px
+	.hero__phone
+		margin-left: 20px
+
 @media only screen and (max-width : 991px)
 	.hide-on-mobile
 		display: none !important
@@ -10,7 +21,6 @@
 		max-width: 500px
 
 	.header
-		background-color: #fff
 		z-index: 5
 		position: fixed
 		left: 0
@@ -26,6 +36,7 @@
 		&__top
 			padding: 0
 			border: none
+			background-color: #fff
 		&__inner
 			padding: 0
 		&__logo
@@ -84,6 +95,8 @@
 			left: auto
 			margin-left: auto
 			width: auto
+			padding: 0
+			box-shadow: none
 			&-item
 				a
 					padding: 10px 15px

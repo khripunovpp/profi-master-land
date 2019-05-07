@@ -21,22 +21,24 @@ var menu = function() {
     }
 
     function ref(e) {
-        var item = $(e.target).closest('.menu__item')
+        if ($(document).width() < 992) {
+            var item = $(e.target).closest('.menu__item')
 
-        if (item.hasClass('menu__item--hasSub')) {
-            var clonedSubMenu = $(e.target).closest('.menu__item--hasSub').find('.menu__sub').clone()
+            if (item.hasClass('menu__item--hasSub')) {
+                var clonedSubMenu = $(e.target).closest('.menu__item--hasSub').find('.menu__sub').clone()
 
-            menu.html(clonedSubMenu).append('<button class="menu__back">Назад</button>')
-        } else {
-            var hash = item.find('a').attr('href')
-            if (hash !== "") {
-                e.preventDefault();
-                toggle()
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function() {
-                    window.location.hash = hash;
-                });
+                menu.html(clonedSubMenu).append('<button class="menu__back">Назад</button>')
+            } else {
+                var hash = item.find('a').attr('href')
+                if (hash !== "") {
+                    e.preventDefault();
+                    toggle()
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function() {
+                        window.location.hash = hash;
+                    });
+                }
             }
         }
     }

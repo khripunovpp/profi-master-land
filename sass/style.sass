@@ -118,6 +118,8 @@ select
 		margin-top: 15px
 
 .header
+	position: relative
+	z-index: 1
 	&__inner
 		@extend %container
 		@extend %grid
@@ -218,6 +220,7 @@ select
 		margin-left: -30px
 		transform: translateX(15px)
 	&__item
+		display: inline-block
 		&--highlight
 			color: #3293ff
 		&--hasSub
@@ -235,13 +238,19 @@ select
 					color: inherit
 	&__sub
 		position: absolute
+		z-index: -1
 		left: 50%
 		margin-left: -125px
 		width: 250px
+		box-shadow: 0 25px 15px rgba(0,0,0,.1)
 		&-item
+			background-color: #fff
+			background-clip: padding-box
 			a
 				display: block
-				padding: 5px
+				padding: 5px 15px
+			&+&
+				border-top: 1px solid transparent
 	&.open
 		box-shadow: 0 2px 15px rgba(0,0,0,.1)
 
@@ -321,6 +330,7 @@ select
 		font-family: $font2_500
 		position: relative
 		overflow: hidden
+		margin: 0
 	&__service
 		padding: 23px 33px
 		strong
@@ -448,6 +458,9 @@ select
 		justify-content: space-between
 		margin: -15px
 	&__item
+		display: inline-block
+		width: 30%
+		vertical-align: top
 		flex: 1 1 30%
 		border: 1px solid #c5d4e7
 		padding: 30px 30px 200px
@@ -669,13 +682,16 @@ select
 		flex-wrap: wrap
 		margin: -15px
 		justify-content: center
+		text-align: center
 	&__item
 		background-color: #f6f3fe
 		margin: 15px
-		text-align: center
 		flex: 1 1 20%
 		padding: 25px 15px
 		cursor: pointer
+		display: inline-block
+		vertical-align: middle
+		width: 20%
 		.icon
 			width: 70px
 			height: 70px
@@ -720,17 +736,6 @@ select
 		padding: 45px
 		box-shadow: 0 0 50px rgba(0,0,0,.5)
 		text-align: center
-		display: flex
-		align-items: center
-		justify-content: center
-		flex-direction: column
-	&__left,
-	&__right
-		width: 50%
-	&__left
-		padding-right: 22px
-	&__right
-		padding-left: 22px
 	&__close
 		position: absolute
 		top: 15px
@@ -781,29 +786,39 @@ select
 			margin: 0
 			font-weight: 700
 	&--breakdowns
-		.modal__box
-			opacity: .99
-			flex-direction: row
-			max-width: 810px
-			&::before,
-			&::after
-				content: ''
-				position: absolute
-				z-index: -1
-			&::before
-				background-image: url(../img/modal-breakdowns-bg-pic-2.png)
-				width: 112px
-				height: 112px
-				bottom: 0
-				left: 0
-			&::after
-				background-image: url(../img/circle.png)
-				width: 635px
-				height: 635px
-				top: 50%
-				margin-top: -317px
-				right: -150px
-				opacity: .2
+		.modal
+			&__box
+				opacity: .99
+				max-width: 810px
+				display: flex
+				align-items: center
+				justify-content: center
+				flex-direction: row
+				&::before,
+				&::after
+					content: ''
+					position: absolute
+					z-index: -1
+				&::before
+					background-image: url(../img/modal-breakdowns-bg-pic-2.png)
+					width: 112px
+					height: 112px
+					bottom: 0
+					left: 0
+				&::after
+					background-image: url(../img/circle.png)
+					width: 635px
+					height: 635px
+					top: 50%
+					margin-top: -317px
+					right: -150px
+					opacity: .2
+			&__left
+				padding-right: 22px
+				width: 40%
+			&__right
+				padding-left: 92px
+				width: 60%
 
 .pricelist
 	position: relative
@@ -854,7 +869,7 @@ select
 				&::after
 					content: ''
 					position: absolute
-					bottom: 0
+					top: 0
 					left: 20px
 					width: calc(100% - 40px)
 					height: 1px
@@ -862,16 +877,31 @@ select
 				&:nth-child(2)
 					font-weight: 700
 					color: #000
+			&__row
+				&:nth-child(1)
+					.table
+						&__cell
+							&::after
+								display: none
+				.table
+					&__cell
+						&:nth-child(1)
+							padding-left: 80px
+							&::before
+								content: ''
+								position: absolute
+								top: 25px
+								left: 18px
+								background-image: url(../img/pricelist-table-icon.svg)
+								background-size: cover
+								width: 90px
+								height: 89px
+
 	&__row,
 	&__spacer
 		display: table
 		width: 100%
 		table-layout: fixed
-	&__spacer
-		.table
-			&__cell
-				&::after
-					display: none
 	&__cell
 		padding: 10px 20px
 		background-color: #fff
@@ -900,6 +930,8 @@ select
 			&:hover
 				background-color: $blue
 				color: #fff
+		p
+			margin: 0
 	&__hidden
 		display: none
 	&__more
@@ -940,14 +972,17 @@ select
 	&__list
 		display: flex
 		margin: -15px
+		text-align: center
 	&__item
 		margin: 15px
 		border: 1px solid #c5d4e7
-		text-align: center
 		padding: 20px 20px 120px
 		flex: 1 1 20%
 		overflow: hidden
 		position: relative
+		display: inline-block
+		vertical-align: top
+		width: 21%
 		&::before
 			content: ''
 			position: absolute
@@ -1041,6 +1076,8 @@ select
 			position: relative
 			z-index: 1
 			width: 30%
+			display: inline-block
+			vertical-align: middle
 		&-field
 			max-width: 270px
 			margin-left: auto
@@ -1055,10 +1092,12 @@ select
 			font-size: 70px
 			font-weight: 500
 			line-height: 1
-			margin: 0 0 0 auto
+			margin: 0 35px 0 auto
 			color: #fff
 			position: relative
 			opacity: .99
+			display: inline-block
+			vertical-align: middle
 			&::after
 				content: ''
 				width: 200px
@@ -1093,6 +1132,7 @@ select
 		display: flex
 		flex-wrap: wrap
 		margin: 1px 0 0 1px
+		overflow: visible
 	&__item
 		flex: 1 1 25%
 		border: 1px solid #c5d4e7
@@ -1319,6 +1359,7 @@ select
 				color: #74a3f5
 	&__form
 		margin: 30px 0
+		text-align: center
 		&-field,
 		&-btn
 			max-width: 270px
@@ -1332,10 +1373,15 @@ select
 			color: #fff
 			margin: 0
 			padding-right: 12%
+			max-width: 48%
+			display: inline-block
+			vertical-align: middle
+			text-align: left
 	&__copy,
 	&__privacepolicy
 		font-size: 12px
 		width: 50%
+		display: inline-block
 	&__privacepolicy
 		text-align: right
 		padding-left: 50px
