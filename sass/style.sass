@@ -105,7 +105,10 @@ select
 	margin-top: 15px
 	&:hover
 		transform: scale(1.1)
-
+	&[disabled]
+		transform: scale(1) !important
+		cursor: default
+ 
 .field
 	width: 100%
 	color: #010101
@@ -805,6 +808,9 @@ select
 			&__right
 				padding-left: 92px
 				width: 60%
+	&.error
+		.modal__caption
+			display: none
 
 .pricelist
 	position: relative

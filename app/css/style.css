@@ -147,6 +147,13 @@ select {
   transform: scale(1.1);
 }
 
+.btn[disabled] {
+  -webkit-transform: scale(1) !important;
+  -ms-transform: scale(1) !important;
+  transform: scale(1) !important;
+  cursor: default;
+}
+
 .field {
   width: 100%;
   color: #010101;
@@ -1156,6 +1163,10 @@ select {
 .modal--breakdowns .modal__right {
   padding-left: 92px;
   width: 60%;
+}
+
+.modal.error .modal__caption {
+  display: none;
 }
 
 .pricelist {

@@ -78,7 +78,7 @@ var ajax = function(form) {
             formid = json.form;
 
         if (status === 'success') {
-            $('input, textarea, button[type=submit]').each(function() {
+            $('input, textarea, button[type=submit], .js-submit').each(function() {
                 $(this).prop("disabled", "true");
             });
         }
@@ -92,19 +92,18 @@ var ajax = function(form) {
 
         if (status === 'error') {
             popup.addClass('error')
-            popup.find('.modal__text').text('Без номера телефона мы не сможем Вам помочь.')
+            popup.find('.modal__text').html('Без номера телефона мы не сможем Вам помочь.')
         } else {
-            popup.addClass('success')
-            popup.find('.modal__text').text('Спасибо за ваше доверие!<br>В ближайшее время мы вам перезвоним.')
+            popup.removeClass('error').addClass('success')
+            popup.find('.modal__text').html('Спасибо за ваше доверие!<br>В ближайшее время мы вам перезвоним.')
             // yaCounter53182684.reachGoal(form);
+            setTimeout(function() {
+                popup.fadeOut();
+            }, 3000)
         }
 
         $('.modal').fadeOut();
         popup.fadeIn();
-
-        setTimeout(function() {
-            popup.fadeOut();
-        }, 2000)
     }
 }
 
@@ -168,7 +167,9 @@ var modals = function() {
             }
         }, 'linear');
 
-        overlay.fadeOut(300)
+        overlay.fadeOut(300, function(){
+            $(box).removeAttr('style')
+        })
     }
 
     function success() {
@@ -243,7 +244,7 @@ var sliders = function() {
         adaptiveHeight: true
     })
 
-     mobileSlick($(".popular__list"), {
+    mobileSlick($(".popular__list"), {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
