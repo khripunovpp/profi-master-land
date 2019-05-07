@@ -71,11 +71,12 @@ html
 							img.hero__img(src="img/hero-img-main.png", alt="")
 							p.hero__service Установка Windows #[strong 250&nbsp;&#8381;]
 								img(src="img/hero-service-icon.png", alt="")
-							p.hero__discount Скидки пенсионерам #[strong 35%]
+							p.hero__discount Скидки#[br] пенсионерам #[strong 35%]
 							.hero__footer
 								button.hero__button.btn.js-modal Заказать
 								.hero__phones
 									a.hero__phone(href="tel:+74953749832") +7 (495) 374-98-32
+							button.hero__mobileCallback.mobileCallback.js-modal Заказать ремонт #[strong -25%]
 						.hero__right
 							p.hero__step #[i 1] Выезд мастера#[br] БЕСПЛАТНО
 							p.hero__step #[i 2] Диагностика#[br] БЕСПЛАТНО
@@ -125,6 +126,7 @@ html
 			section.breakdowns
 				.container
 					.breakdowns__inner
+						button.breakdowns__mobileCallback.mobileCallback.js-modal Заказать ремонт #[strong -25%]
 						h2.breakdowns__title Определите вашу #[strong поломку]
 						.breakdowns__list
 							.breakdowns__item(data-price="455")
@@ -186,44 +188,44 @@ html
 						.pricelist__table.table
 							.table__head
 								.table__row
-									.table__cell #[p Описание работы]
-									.table__cell #[p Цена]
-									.table__cell #[p Ремонт]
+									.table__cell Описание работы
+									.table__cell Цена
+									.table__cell Ремонт
 							.table__tail
 								.table__row
-									.table__cell #[p Доставка и диагностика]
-									.table__cell #[p 0&nbsp;&#8381;]
-									.table__cell #[p #[button.js-modal Закзать]]
+									.table__cell Доставка и диагностика
+									.table__cell 0&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
 								.table__row
-									.table__cell #[p Замена видеокарты на ноутбуке]
-									.table__cell #[p 1750&nbsp;&#8381;]
-									.table__cell #[p #[button.js-modal Закзать]]
+									.table__cell Замена видеокарты на ноутбуке
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
 								.table__row
-									.table__cell #[p Ремонт подсветки в ноутбуке]
-									.table__cell #[p 1750&nbsp;&#8381;]
-									.table__cell #[p #[button.js-modal Закзать]]
+									.table__cell Ремонт подсветки в ноутбуке
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
 								.table__row
-									.table__cell #[p Замена клавиатуры на ноутбуке]
-									.table__cell #[p 1750&nbsp;&#8381;]
-									.table__cell #[p #[button.js-modal Закзать]]
+									.table__cell Замена клавиатуры на ноутбуке
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
 								.table__spacer
-									.table__cell #[p]
-									.table__cell #[p]
-									.table__cell #[p]
+									.table__cell
+									.table__cell
+									.table__cell
 							button.table__more Показать еще
 							.table__hidden
 								.table__row
-									.table__cell #[p fdbzdf]
-									.table__cell #[p 1750&nbsp;&#8381;]
-									.table__cell #[p #[button.js-modal Закзать]]
+									.table__cell fdbzdf
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
 								.table__row
-									.table__cell #[p fdbzdf]
-									.table__cell #[p 1750&nbsp;&#8381;]
-									.table__cell #[p #[button.js-modal Закзать]]
+									.table__cell fdbzdf
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
 								.table__row
-									.table__cell #[p fdbzdf]
-									.table__cell #[p 1750&nbsp;&#8381;]
-									.table__cell #[p #[button.js-modal Закзать]]
+									.table__cell fdbzdf
+									.table__cell 1750&nbsp;&#8381;
+									.table__cell #[button.js-modal Закзать]
 
 			section.scheme
 				.container
@@ -252,7 +254,9 @@ html
 								p.scheme__item-description По окончании работ вы получаете исправную технику и бланк БСО
 								p.scheme__item-num 04
 						form.scheme__form(action="", method="post")
-							p.scheme__form-caption Вызовите мастера прямо сейчас и получите #[strong скидку]
+							p.scheme__form-step #[i 1] Выезд мастера#[br] БЕСПЛАТНО
+							p.scheme__form-step #[i 2] Диагностика#[br] БЕСПЛАТНО
+							p.scheme__form-caption Вызовите мастера прямо сейчас и получите #[strong скидку&nbsp;#[small 25%]]
 							p.scheme__form-discount 25%
 							input(type="tel", name="phone", placeholder="Ваше телефон", required).scheme__form-field.field
 							input(type="hidden", name="form", value="shcheme")
@@ -351,6 +355,7 @@ html
 								.advantages__item-icon
 								p.advantages__item-caption Гарантия
 								p.advantages__item-description Даем гарантию на любой ремонт и запчасти – от 90 дней
+						button.advantages__mobileCallback.mobileCallback.js-modal Заказать ремонт #[strong -25%]
 
 			section.about
 				.container
@@ -428,6 +433,16 @@ html
 									input(type="hidden", name="form", value="popup")
 									button.modal__form-btn.btn.js-submit Отправить
 									a(href="").modal__form-privacypolicy Политика конфиденциальности			
+									
+		.modal#response
+			table.modal__wrapper
+				tbody
+					tr
+						td.modal__inner
+							.modal__box
+								button.modal__close
+								p.modal__caption Ваша скидка #[strong -25%]
+								p.modal__text Спасибо за ваше доверие! #[br]В ближайшее время мы вам перезвоним.
 
 		include _sprite
 

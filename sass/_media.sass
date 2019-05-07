@@ -17,6 +17,40 @@
 	.hide-on-mobile
 		display: none !important
 
+	.slick-dots
+		margin-top: 20px
+		button,
+		li
+			width: 15px !important
+			height: 15px !important
+		li
+			margin: 0 5px
+
+	.mobileCallback
+		display: block
+		max-width: 320px
+		background-color: #5f89fc
+		border-radius: 15px 4px 4px 15px
+		padding: 20px 10px 20px 80px
+		width: 100%
+		border: none
+		margin-top: 15px
+		font-size: 20px
+		font-weight: 700
+		color: #fff
+		position: relative
+		strong
+			position: absolute
+			top: 50%
+			left: -2px
+			width: 69px
+			height: 69px
+			margin-top: -34.5px
+			line-height: 64px
+			background-color: #63af55
+			border-radius: 13px
+			border: 2px solid #fff
+
 	.container
 		max-width: 500px
 
@@ -80,6 +114,7 @@
 			margin: 0
 			transform: none
 		&__item
+			display: block
 			a, span
 				display: block
 				padding: 10px 15px
@@ -92,6 +127,7 @@
 						display: none
 		&__sub
 			position: relative
+			z-index: 1
 			left: auto
 			margin-left: auto
 			width: auto
@@ -103,6 +139,437 @@
 					background-color: #eef2fd
 				&+&
 					margin-top: 5px
+		&__back
+			margin-top: 20px
+			margin-left: 15px
+			font-size: 16px
+			text-transform: uppercase
+			font-weight: 700
+			padding: 0
+			border: none
+			background-color: transparent
+			&::before
+				content: '\e901'
+				display: inline-block
+				transform: scale(-1,1)
+				font-size: 13px
+				margin-right: 12px
+
+	.hero
+		padding: 115px 0 15px
+		&__right
+			display: none
+		&__left
+			padding-right: 0
+			position: relative
+		&__title
+			font-size: 22px
+			margin-bottom: 15px
+			strong
+				font-size: 21px
+				margin-top: 5px
+				display: block
+		&__list
+			font-size: 14px
+			padding-right: 80px
+			margin: 15px 0
+			li
+				padding-left: 18px
+				&::before
+					width: 6px
+					height: 6px
+		&__service,
+		&__discount
+			max-width: 320px
+			font-size: 16px
+			strong
+				font-size: 25px
+		&__service
+			padding: 12px 25px
+		&__discount
+			margin-top: 10px
+			padding: 12px 125px 12px 25px
+			&::after
+				transform: scale(.8)
+				right: -50px
 		&__footer
+			display: none
+		&--main
+			.hero__img
+				max-width: 500px
+				margin-right: auto
+				right: -250px
+
+	.guarantees
+		padding: 20px 0
+		&__list
 			display: block
-			padding: 0 15px 20px
+			margin: -10px
+		&__item
+			width: auto
+			display: block
+			padding: 20px 100px 20px 20px
+			text-align: left
+			background-position: right center
+			margin: 10px
+			&-title
+				font-size: 20px
+				margin-bottom: 10px
+			&-text
+				font-size: 14px
+			&--1
+				background-image: url(../img/guarantees-img-1-mobile.png)
+			&--2
+				background-image: url(../img/guarantees-img-2-mobile.png)
+			&--3
+				background-image: url(../img/guarantees-img-3-mobile.png)
+		&__promo
+			background-color: #7e6fb4
+			background-image: url(../img/guarantees-promo-bg-mobile.png)
+			background-position: right bottom
+			padding: 20px 25px
+			font-size: 18px
+			small
+				font-size: 14px
+				display: block
+				margin-top: 2px
+			&-btn
+				position: relative
+				top: auto
+				right: auto
+				margin: 25px 0 0 -25px
+				border-radius: 0 6px 6px 0
+				color: #5d75d7
+				background-color: #fff
+				font-size: 16px
+
+	.reviews
+		padding: 20px 0
+		&__title
+			font-size: 20px
+			margin-bottom: 15px
+		&__list
+			margin: 0
+		&__item
+			margin: 0
+			padding: 20px
+		&__text
+			font-size: 16px
+		&__stars
+			font-size: 14px
+			margin-bottom: 10px
+		&__recomend
+			font-size: 18px
+			margin-bottom: 10px
+			&::before
+				font-size: 15px
+				padding: 5px
+		.slick-track
+			display: block
+
+	.breakdowns
+		padding: 20px 0
+		&__mobileCallback
+			margin: 0 auto 15px
+			max-width: none
+		&__title
+			font-size: 20px
+			margin-bottom: 15px
+		&__list
+			display: block
+			margin: 0
+		&__item
+			display: block
+			flex: none
+			float: left
+			margin: 0
+		&__name
+			br
+				display: none
+
+	.pricelist
+		padding: 20px 0
+		&__title
+			font-size: 20px
+			margin-bottom: 5px
+		&__disclamer
+			margin-bottom: 15px
+			font-size: 15px
+
+	.table
+		&__head
+			display: none
+		&__row
+			padding: 10px 15px
+			background-color: #fff
+			&+&
+				margin-top: 10px
+		&__cell
+			padding: 0
+			background-color: transparent
+			&::before,
+			&::after
+				display: none
+			&:nth-child(1)
+				padding-left: 0 !important
+				padding-right: 15px
+				font-size: 14px
+			&:nth-child(2)
+				font-size: 16px
+				width: 80px
+			&:nth-child(2),
+			&:nth-child(3)
+				border: none
+			&:nth-child(3)
+				width: 25px
+			button
+				margin: 0
+				font-size: 0
+				padding: 0
+				&::after
+					content: '\e901'
+					font-size: 17px
+				&:hover
+					background-color: inherit
+					color: inherit
+		&__more
+			margin-top: 10px
+			font-size: 16px
+			padding: 12px 20px
+			border-radius: 6px
+
+	.scheme
+		padding: 20px 0 0
+		&__title
+			font-size: 20px
+			margin-bottom: 5px
+		&__disclamer
+			margin-bottom: 15px
+			font-size: 15px
+		&__list
+			display: block
+			margin: 0
+		&__item
+			display: block
+			width: auto
+			margin: 0
+			float: left
+			&-description
+				max-width: 90%
+				display: inline-block
+		&__form
+			margin: 20px -270px 0
+			display: block
+			text-align: center
+			padding: 20px 270px
+			&-step
+				position: relative
+				padding-left: 70px
+				min-height: 50px
+				flex-direction: column
+				justify-content: center
+				display: flex
+				color: #fff
+				font-size: 18px
+				line-height: 1.3
+				margin: 0 auto 15px
+				max-width: 320px
+				text-align: left
+				i
+					position: absolute
+					top: 50%
+					margin-top: -25px
+					left: 0
+					font-style: normal
+					width: 50px
+					height: 50px
+					line-height: 50px
+					text-align: center
+					font-weight: 700
+					font-size: 27px
+					&::after
+						content: ''
+						position: absolute
+						top: 50%
+						left: 50%
+						width: 50px
+						height: 50px
+						margin-top: -25px
+						margin-left: -25px
+						background-image: url(../img/circle.png)
+						background-size: cover
+				&:nth-child(even)
+					i::after
+						transform: rotate(180deg)
+			&-caption
+				max-width: 320px
+				width: auto
+				font-size: 15px
+				padding: 0
+				margin: 20px auto 15px
+				small
+					display: inline
+					font-size: inherit
+			&-discount
+				display: none
+			&-field
+				margin-top: 15px
+				max-width: 320px
+				display: block
+				margin-left: auto
+				margin-right: auto
+			&-btn
+				margin-left: 0
+				margin-top: 10px
+				border-radius: 6px
+				max-width: 320px
+				display: block
+				margin-left: auto
+				margin-right: auto
+
+	.popular
+		padding: 20px 0 0
+		&__title
+			font-size: 20px
+			margin-bottom: 15px
+		&__list
+			display: block
+			margin: 0
+		&__item
+			margin: 0
+			float: left
+			padding: 20px 20px 90px
+			&-caption
+				font-size: 20px
+			&--7
+				padding: 20px
+
+	.advantages
+		padding: 20px 0
+		&__title
+			font-size: 20px
+			margin-bottom: 25px
+		&__list
+			display: block
+			margin: 0
+		&__item
+			margin: 0
+			&-caption
+				font-size: 20px
+			&-description
+				font-size: 14px
+				max-width: 85%
+			&+&
+				margin-top: 25px
+		&__mobileCallback
+			margin-top: 25px
+
+	.about
+		padding: 20px 0
+		&__title
+			font-size: 20px
+			margin-bottom: 15px
+		&__pic
+			margin: 0 0 15px
+		&__text
+			font-size: 16px
+
+	.contacts
+		padding: 20px 0
+		&__title
+			font-size: 20px
+			margin-bottom: 15px
+		&__inner
+			padding-right: 0
+		&__text
+			font-size: 16px
+			margin-bottom: 15px
+		&__item
+			font-size: 20px
+			line-height: 1.2
+			small
+				margin-top: 0
+			&+&
+				margin-top: 15px
+		&__map
+			position: relative
+			top: auto
+			right: auto
+			padding-left: 0
+			width: 100%
+			height: 200px
+			margin-top: 20px
+
+	.footer
+		padding: 20px 0
+		&__top
+			display: block
+		&__phone
+			text-align: left
+			margin-top: 15px
+			font-size: 0
+			a
+				font-size: 20px
+		&__form
+			display: block
+			margin: 15px 0
+			&-caption
+				padding-right: 0
+				max-width: none
+				font-size: 14px
+			&-field
+				margin-top: 10px
+				max-width: none
+			&-btn
+				margin-top: 10px
+				margin-left: 0
+				max-width: none
+		&__small
+			flex-direction: column-reverse
+		&__copy,
+		&__privacepolicy
+			text-align: center
+			width: auto
+		&__privacepolicy
+			padding-left: 0
+		&__copy
+			margin: 25px 0 0
+
+	.modal
+		&__box
+			padding: 35px 20px 20px
+			max-width: 320px
+		&__caption
+			font-size: 18px
+			margin-bottom: 15px
+		&__text
+			font-size: 15px
+		&__breakdown
+			&-icon
+				vertical-align: middle
+				margin-right: 18px
+				width: 70px
+				height: 70px
+				background-color: #fff
+			&-name
+				font-size: 18px
+				display: inline-block
+				vertical-align: middle
+				width: 50%
+				margin: 0
+			&-price
+				margin-top: 20px
+		&--breakdowns 
+			.modal
+				&__box
+					display: block
+					max-width: 320px
+					&::after,
+					&::before
+						display: none
+				&__left,
+				&__right
+					width: auto
+					padding: 0
+				&__left
+					margin-bottom: 25px

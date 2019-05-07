@@ -64,13 +64,6 @@ var menu = function() {
     })()
 }
 
-var sendForm = function(btn) {
-    $(btn).on('click', function(event) {
-        event.preventDefault();
-        var form = $(this).closest('form');
-        ajax(form);
-    });
-}
 
 var ajax = function(form) {
 
@@ -82,42 +75,37 @@ var ajax = function(form) {
 
         var json = JSON.parse(data),
             status = json.status,
-            message = json.message,
             formid = json.form;
 
         if (status === 'success') {
             $('input, textarea, button[type=submit]').each(function() {
                 $(this).prop("disabled", "true");
             });
-
         }
 
-        addNotify(status, message, formid)
+        addNotify(status, formid)
 
     }
 
     var addNotify = function(status, msg, form) {
-        var popup = $('.response');
-
-        popup.find('.response__text').text(msg)
+        var popup = $('#response');
 
         if (status === 'error') {
-            popup.find('.response__title').text('Что-то пошло не так!')
-
+            popup.addClass('error')
+            popup.find('.modal__text').text('Без номера телефона мы не сможем Вам помочь.')
         } else {
-            popup.find('.response__title').text('Ваша заявка принята')
+            popup.addClass('success')
+            popup.find('.modal__text').text('Спасибо за ваше доверие!<br>В ближайшее время мы вам перезвоним.')
             // yaCounter53182684.reachGoal(form);
         }
 
-        $('.response').fadeIn();
         $('.modal').fadeOut();
-        $('.popup').fadeOut();
+        popup.fadeIn();
 
         setTimeout(function() {
-            $('.response').fadeOut();
+            popup.fadeOut();
         }, 2000)
     }
-
 }
 
 
@@ -132,7 +120,7 @@ var modals = function() {
         open('#breakdowns')
     });
 
-    $('body').on('click', '.js-modal', function(event) {
+    $('body').on('click', '.js-modal, .table__row', function(event) {
         event.preventDefault();
 
         open('#callback')
@@ -216,9 +204,7 @@ var modals = function() {
     }
 }
 
-$(function() {
-    menu()
-    modals()
+var sliders = function() {
 
     $('.reviews__list').slick({
         slidesToShow: 3,
@@ -228,8 +214,71 @@ $(function() {
         adaptiveHeight: true,
         infinite: false,
         prevArrow: '<button type="button" class="slick-prev">пред</button>',
-        nextArrow: '<button type="button" class="slick-next">след</button>'
+        nextArrow: '<button type="button" class="slick-next">след</button>',
+        responsive: [{
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
+            }
+        }]
     })
+
+    mobileSlick($(".breakdowns__list"), {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        infinite: false,
+        adaptiveHeight: true
+    })
+
+    mobileSlick($(".scheme__list"), {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        infinite: false,
+        adaptiveHeight: true
+    })
+
+     mobileSlick($(".popular__list"), {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        infinite: false,
+        adaptiveHeight: true
+    })
+}
+
+
+function mobileSlick(el, op) {
+    el.slick(op);
+
+    if ($(window).width() > 991) _unslick()
+
+    $(window).on('resize', function() {
+        if ($(window).width() > 991) {
+            _unslick()
+        } else if (!el.hasClass('slick-initialized')) {
+            return el.slick(op);
+        }
+    });
+
+    function _unslick() {
+        if (el.hasClass('slick-initialized')) {
+            el.slick('unslick');
+        }
+    }
+}
+
+$(function() {
+    menu()
+    modals()
+
+    sliders()
 
     $('.table__more').on('click', function(event) {
         event.preventDefault();
@@ -238,5 +287,11 @@ $(function() {
         $('.table').find('.table__spacer').before(hiddenItems)
 
         $(event.target).remove()
+    });
+
+    $('.js-submit').on('click', function(event) {
+        event.preventDefault();
+        var form = $(this).closest('form');
+        ajax(form);
     });
 });

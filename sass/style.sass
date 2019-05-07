@@ -211,8 +211,6 @@ select
 			color: #5f89fc
 	span
 		cursor: default
-	&__footer
-		display: none
 	&__list
 		display: flex
 		align-items: stretch
@@ -251,6 +249,10 @@ select
 				padding: 5px 15px
 			&+&
 				border-top: 1px solid transparent
+	&__back
+		color: $blue
+		&::before
+			@extend %icon
 	&.open
 		box-shadow: 0 2px 15px rgba(0,0,0,.1)
 
@@ -311,8 +313,7 @@ select
 				background-color: $green
 				position: absolute
 				left: 0
-				top: 50%
-				margin-top: -5px
+				top: 7px
 	&__img
 		position: absolute
 		z-index: -1
@@ -344,7 +345,7 @@ select
 			transform: translateY(-50%)
 	&__discount
 		margin-left: 60px
-		padding: 35px 93px 35px 33px
+		padding: 35px 95px 35px 33px
 		strong
 			font-size: 36px
 			position: absolute
@@ -353,11 +354,14 @@ select
 			transform: translateY(-50%)
 			color: $blue
 		&::after
-			content: url(../img/hero-discount-bg.png)
+			content: ''
 			position: absolute
 			top: 50%
 			right: -25px
-			transform: translateY(-50%)
+			margin-top: -86px
+			background-image: url(../img/hero-discount-bg.png)
+			width: 173px
+			height: 172px
 	&__footer
 		margin-top: 45px
 	&__phones
@@ -468,6 +472,7 @@ select
 		text-align: center
 		background-color: #fff
 		margin: 15px
+		background-position: center bottom
 		&-title
 			font-size: 35px
 			font-weight: 700
@@ -480,13 +485,10 @@ select
 			margin: 0
 		&--1
 			background-image: url(../img/guarantees-img-1.png)
-			background-position: center bottom
 		&--2
 			background-image: url(../img/guarantees-img-2.png)
-			background-position: center bottom
 		&--3
 			background-image: url(../img/guarantees-img-3.png)
-			background-position: center bottom
 	&__promo
 		background-color: #7e6fb4
 		background-image: url(../img/guarantees-promo-bg.png), linear-gradient(to right, #7e6fb4 70%, #c5e67d 70%)
@@ -557,12 +559,12 @@ select
 	&__stars
 		display: block
 		margin-bottom: 20px
+		font-size: 22px
 		i
 			display: inline-block
 			&::before
 				@extend %icon
 				content: '\e905'
-				font-size: 22px
 				color: $green
 		i+i
 			margin-left: 3px
@@ -590,25 +592,6 @@ select
 
 	.slick-track
 		display: flex
-	.slick-list
-		overflow: hidden
-	.slick-dots
-		bottom: 0
-		position: relative
-		font-size: 0
-		margin-top: 40px
-		li
-			margin: 0 10px
-			&.slick-active,
-			&:hover
-				button
-					opacity: 1
-		button
-			background-color: #5f89fc
-			opacity: .3
-			border-radius: 5px
-			&::before
-				display: none
 	.slick-prev, 
 	.slick-next
 		font-size: 18px
@@ -755,6 +738,9 @@ select
 		color: #234c90
 		font-size: 24px
 		margin: 0 0 25px
+	&__text
+		margin: 0
+		font-size: 18px
 	&__form
 		&-field
 			background-color: #f6f3fe
@@ -930,6 +916,8 @@ select
 			&:hover
 				background-color: $blue
 				color: #fff
+			&::after
+				@extend %icon
 		p
 			margin: 0
 	&__hidden
@@ -1066,6 +1054,8 @@ select
 		display: flex
 		overflow: hidden
 		margin-top: 30px
+		&-step
+			display: none
 		&-caption
 			font-size: 19px
 			font-family: $font2_500
@@ -1078,6 +1068,8 @@ select
 			width: 30%
 			display: inline-block
 			vertical-align: middle
+			small
+				display: none
 		&-field
 			max-width: 270px
 			margin-left: auto
@@ -1284,6 +1276,7 @@ select
 	&__text
 		font-size: 20px
 		overflow: auto
+		margin: 0
 	&__pic
 		float: left
 		margin: 0 40px 0 0
@@ -1302,6 +1295,7 @@ select
 	&__text
 		font-size: 20px
 		overflow: auto
+		margin: 0 0 25px
 	&__inner
 		padding-right: calc(50% + 30px)
 		position: relative
@@ -1389,6 +1383,33 @@ select
 		text-decoration: none
 		&:hover
 			text-decoration: underline
+
+.mobileCallback
+	display: none
+
+.slick-dotted.slick-slider
+	margin-bottom: 0
+
+.slick-list
+	overflow: hidden
+
+.slick-dots
+	bottom: 0
+	position: relative
+	font-size: 0
+	margin-top: 40px
+	li
+		margin: 0 10px
+		&.slick-active,
+		&:hover
+			button
+				opacity: 1 !important
+	button
+		background-color: #5f89fc !important
+		opacity: .3 !important
+		border-radius: 5px
+		&::before
+			display: none
 
 
 //ALWAYS END
