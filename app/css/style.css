@@ -1885,6 +1885,7 @@ select {
 
 .popular__item--7 .popular__item-caption {
   color: inherit;
+  text-decoration: none !important;
 }
 
 .advantages {
