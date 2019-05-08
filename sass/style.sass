@@ -255,6 +255,9 @@ select
 				&:hover
 					background-color: #3293ff
 					color: #fff
+			&.active
+				background-color: #3293ff
+				color: #fff
 			&+&
 				border-top: 1px solid transparent
 	&__back
@@ -351,6 +354,37 @@ select
 			top: 50%
 			right: 0
 			transform: translateY(-50%)
+		&-icon
+			position: absolute
+			top: 50%
+			right: -20px
+			margin-top: -30px
+			&::before
+				@extend %icon
+				font-size: 60px
+				color: $blue
+			&--1
+				&::before
+					content: '\e910'
+			&--2
+				&::before
+					content: '\e910'
+			&--3
+				&::before
+					content: '\e915'
+			&--4
+				&::before
+					content: '\e912'
+			&--5
+				&::before
+					content: '\e91a'
+			&--6
+				&::before
+					content: '\e919'
+			&--7
+				right: -6px
+				&::before
+					content: '\e913'
 	&__discount
 		margin-left: 60px
 		padding: 35px 95px 35px 33px
@@ -446,6 +480,57 @@ select
 			bottom: 25px
 			right: 50%
 			margin-right: -710px
+	&--single
+		.hero
+			&__img
+				top: auto !important
+				left: auto !important
+				transform: translateX(35px)
+			&__service
+				max-width: none
+				width: auto
+				padding-right: 70px
+		&-1,
+		&-2,
+		&-8,
+		&-9,
+		&-12,
+		&-13
+			.hero__img
+				bottom: 25px
+				right: 50%
+				margin-right: -750px
+		&-3,
+		&-10
+			.hero__img
+				bottom: 25px
+				right: 50%
+				margin-right: -550px
+		&-4
+			.hero__img
+				bottom: 120px
+				right: 50%
+				margin-right: -650px
+		&-5
+			.hero__img
+				bottom: 120px
+				right: 50%
+				margin-right: -550px
+		&-6
+			.hero__img
+				bottom: 20px
+				right: 50%
+				margin-right: -420px
+		&-7
+			.hero__img
+				bottom: 80px
+				right: 50%
+				margin-right: -500px
+		&-11
+			.hero__img
+				bottom: 85px
+				right: 50%
+				margin-right: -450px
 	&--metro
 		.hero__inner
 			position: relative
@@ -454,6 +539,8 @@ select
 			font-size: 43px
 			strong
 				display: none
+			.js-metro
+				display: block
 		.hero__img
 			top: -10px
 			left: 500px

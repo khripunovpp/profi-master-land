@@ -143,6 +143,10 @@
 					&:hover
 						color: #5f89fc
 						background-color: #eef2fd
+				&.active
+					a
+						color: #fff
+						background-color: #5f89fc
 				&+&
 					margin-top: 5px
 		&__back
@@ -169,21 +173,28 @@
 			padding-right: 0
 			position: relative
 		&__title
-			font-size: 22px
+			font-size: 22px !important
 			margin-bottom: 15px
 			strong
 				font-size: 21px
 				margin-top: 5px
 				display: block
+			br
+				display: none
 		&__list
 			font-size: 14px
 			padding-right: 80px
 			margin: 15px 0
 			li
 				padding-left: 18px
+				display: block !important
+				max-width: none !important
 				&::before
 					width: 6px
 					height: 6px
+			li+li
+				margin-top: 5px !important
+				margin-left: 0 !important
 		&__service,
 		&__discount
 			max-width: 320px
@@ -205,6 +216,61 @@
 				max-width: 500px
 				margin-right: auto
 				right: -250px
+
+		&--metro
+			.hero
+				&__img
+					position: relative
+					top: auto
+					left: 23px
+					margin: 0 auto
+					display: block
+				&__discount,
+				&__mobileCallback
+					margin-left: auto
+					margin-right: auto
+				&__service
+					display: none
+				&__list
+					display: none
+				&__title
+					line-height: 1.2
+		&--single
+			.hero
+				&__img
+					position: relative
+					bottom: auto
+					right: auto
+					margin: 0 auto -25px
+					display: block
+					max-width: 245px
+					left: auto
+					transform: none
+				&__title
+					line-height: 1.2
+					max-width: 320px
+					margin-left: auto
+					margin-right: auto
+				&__list
+					display: none
+				&__service
+					max-width: 320px
+					width: 100%
+				&__service,
+				&__discount,
+				&__mobileCallback
+					margin-left: auto
+					margin-right: auto
+			&-3
+				.hero__img
+					left: -50px
+			&-4
+				.hero__img
+					margin-bottom: -5px
+			&-6
+				.hero__img
+					margin-bottom: -45px
+					left: -30px
 
 	.guarantees
 		padding: 20px 0
