@@ -9,13 +9,32 @@ html
 		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900")
 		link(rel='stylesheet', href='css/style.css')
-		style.
-			*,
-			*::after,
-			*::before {
-				//- outline: 1px solid rgba(255,0,0,.5) !important
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+		script(type='text/javascript').
+			var _GET = function(v) {
+			var url = window
+			.location
+			.search
+			.replace('?', '')
+			.split('&')
+			.reduce(
+			function(p, e) {
+			var a = e.split('=');
+			p[decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+			return p;
+			}, {}
+			)
+			return url[v]
 			}
-		script(src="https://ctr-localhost.ru/vlad/jq.js")
+			function geo() {
+			var metro = _GET('metro')
+			if (metro) {
+			$('.hero').addClass('hero--metro').removeClass('hero--main')
+			if(!$('.hero').hasClass('hero--single')) $('.hero__img').attr('src', 'img/hero-img-geo.png')
+			$('.js-metro').text('у метро ' + metro)
+			}
+			}
+
 
 	body
 		.w-page
@@ -35,35 +54,43 @@ html
 						button.header__burger.js-menuToggle
 						nav.menu
 							ul.menu__list
-								li.menu__item.active
-									a(href="#") О компании
+								li.menu__item
+									a(href="#about") О компании
 								li.menu__item.menu__item--hasSub
 									span Услуги
 									.menu__sub
 										.menu__sub-item
-											a(href="") Услуга 1
+											a(href="remont-noutbukov.html") Ремонт ноутбуков
 										.menu__sub-item
-											a(href="") Услуга 1
+											a(href="nastrojka-kompyuterov.html") Настройка компьютеров
 										.menu__sub-item
-											a(href="") Услуга 1
+											a(href="ustanovka-windows.html") Установка Windows
 										.menu__sub-item
-											a(href="") Услуга 1
+											a(href="nastrojka-wi-fi-routera.html") Настройка Wi-Fi роутера
+										.menu__sub-item
+											a(href="vosstanovlenie-dannyh.html") Восстановление данных
+										.menu__sub-item
+											a(href="ustanovka-antivirusa.html") Установка антивируса
+										.menu__sub-item
+											a(href="udalenie-virusov.html") Удаление вирусов
+										.menu__sub-item
+											a(href="ustanovka-programm.html") Установка программ
 								li.menu__item
-									a(href="#") Преимущества
+									a(href="#advantages") Преимущества
 								li.menu__item
-									a(href="#") Отзывы
+									a(href="#reviews") Отзывы
 								li.menu__item
-									a(href="#") Цены
+									a(href="#pricelist") Цены
 								li.menu__item
-									a(href="#") Популярные поломки
+									a(href="#popular") Популярные поломки
 								li.menu__item
-									a(href="#") Контакты
+									a(href="#contacts") Контакты
 
 			section.hero.hero--main
 				.container
 					.hero__inner
 						.hero__left
-							h1.hero__title Ремонт компьютеров #[strong в день обращения ]
+							h1.hero__title #[span.js-title Ремонт компьютеров] #[span.js-metro] #[strong в день обращения ]
 							ul.hero__list
 								li В течение 30 минут мастер будет у Вас
 								li Мастера со стажем, опыт более 10 лет
@@ -102,7 +129,7 @@ html
 					p.guarantees__promo Бесплатная#[br] диагностика #[small вашей техники]
 						button.guarantees__promo-btn.btn.js-modal Узнать подробнее
 
-			section.reviews
+			section.reviews#reviews
 				.container
 					.reviews__inner
 						h2.reviews__title За годы работы получили #[strong сотни отзывов]
@@ -180,7 +207,7 @@ html
 										use(xlink:href='#icon_10')
 								p.breakdowns__name Хочу перенести фотографии#[br] с телефона на компьютер
 
-			section.pricelist
+			section.pricelist#pricelist
 				.container
 					.pricelist__inner
 						h2.pricelist__title Цены на услуги #[strong сервисного центра]
@@ -262,12 +289,12 @@ html
 							input(type="hidden", name="form", value="shcheme")
 							button.scheme__form-btn.btn.js-submit Получить скидку
 
-			section.popular
+			section.popular#popular
 				.container
 					.popular__inner
 						h2.popular__title Популярные #[strong поломки]
 						.popular__list
-							.popular__item.popular__item--1
+							a(href="ne-rabotaet-kompyuter.html").popular__item.popular__item--1
 								p.popular__item-caption Не работает компьютер
 								img.popular__item-pic(src="img/popular-pic-1.png", alt="")
 								ul.popular__item-services
@@ -277,7 +304,7 @@ html
 									li Замена блока питания
 									li Замена разъема
 								p.popular__item-price ~&nbsp;200&nbsp;&#8381;
-							.popular__item.popular__item--2
+							a(href="ne-podklushaetsja-k-seti.html").popular__item.popular__item--2
 								p.popular__item-caption Не  подключается к сети
 								ul.popular__item-services
 									li Настройка Wi-Fi
@@ -286,7 +313,7 @@ html
 									li Настройка интернета
 								p.popular__item-price ~&nbsp;250&nbsp;&#8381;
 								p.popular__item-num 02
-							.popular__item.popular__item--3
+							a(href="problemi-s-windows").popular__item.popular__item--3
 								p.popular__item-caption Проблемы с Windows
 								ul.popular__item-services
 									li Переустановка Windows
@@ -295,7 +322,7 @@ html
 									li Установка драйверов и обновлений
 								p.popular__item-price ~&nbsp;200&nbsp;&#8381;
 								p.popular__item-num 03
-							.popular__item.popular__item--4
+							a(href="ne-vidit-vneshnie-ustrojstva.html").popular__item.popular__item--4
 								p.popular__item-caption Не  видит внешние устройства?
 								ul.popular__item-services
 									li Замена жесткого диска
@@ -303,7 +330,7 @@ html
 									li Установка драйверов и обновлений
 								p.popular__item-price ~&nbsp;100&nbsp;&#8381;
 								p.popular__item-num 04
-							.popular__item.popular__item--5
+							a(href="net-zvuka.html").popular__item.popular__item--5
 								p.popular__item-caption Нет звука
 								ul.popular__item-services
 									li Подключения и настройка оборудования
@@ -311,7 +338,7 @@ html
 									li Удаление вирусов
 								p.popular__item-price ~&nbsp;100&nbsp;&#8381;
 								p.popular__item-num 05
-							.popular__item.popular__item--6
+							a(href="virusi.html").popular__item.popular__item--6
 								p.popular__item-caption Вирусы
 								ul.popular__item-services
 									li Удаление вируса
@@ -326,7 +353,7 @@ html
 								input(type="hidden", name="form", value="popular")
 								button.popular__item-btn.btn.js-submit Перезвоните мне
 			
-			section.advantages
+			section.advantages#advantages
 				.container
 					.advantages__inner
 						h2.advantages__title Доверьте ремонт #[strong Профессионалам]
@@ -357,7 +384,7 @@ html
 								p.advantages__item-description Даем гарантию на любой ремонт и запчасти – от 90 дней
 						button.advantages__mobileCallback.mobileCallback.js-modal Заказать ремонт #[strong -25%]
 
-			section.about
+			section.about#about
 				.container
 					.about__inner
 						h2.about__title Profi #[strong Master]
@@ -366,7 +393,7 @@ html
 							| Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Рот бросил текстов строчка необходимыми агенство великий знаках однажды она, безопасную рукопись! Всеми, текста! Заглавных, своего. Океана это обеспечивает точках языком! Над, пояс то страну, лучше рукопись о реторический агенство. Грустный свое, имеет буквоград буквенных свой своих, родного собрал то.
 
 
-			section.contacts
+			section.contacts#contacts
 				.container
 					.contacts__inner
 						h2.contacts__title Контактная #[strong Информация]

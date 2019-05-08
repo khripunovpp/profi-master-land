@@ -172,6 +172,7 @@ select {
 .header {
   position: relative;
   z-index: 1;
+  height: auto !important;
 }
 
 .header__logo, .header__middle, .header__phone {
@@ -358,6 +359,12 @@ select {
 .menu__sub-item a {
   display: block;
   padding: 5px 15px;
+  text-transform: initial;
+}
+
+.menu__sub-item a:hover {
+  background-color: #3293ff;
+  color: #fff;
 }
 
 .menu__sub-item + .menu__sub-item {
@@ -418,7 +425,7 @@ select {
 .hero__title strong {
   font-size: 42px;
   text-transform: lowercase;
-  display: inline-block;
+  display: block;
   margin-top: 8px;
   color: #2f353f;
   font-weight: 400;
@@ -628,6 +635,39 @@ select {
   bottom: 25px;
   right: 50%;
   margin-right: -710px;
+}
+
+.hero--metro .hero__inner {
+  position: relative;
+}
+
+.hero--metro .hero__title {
+  max-width: 500px;
+  font-size: 43px;
+}
+
+.hero--metro .hero__title strong {
+  display: none;
+}
+
+.hero--metro .hero__img {
+  top: -10px;
+  left: 500px;
+}
+
+.hero--metro .hero__list {
+  font-size: 17px;
+}
+
+.hero--metro .hero__list li {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 31%;
+}
+
+.hero--metro .hero__list li + li {
+  margin-left: 2%;
+  margin-top: 0;
 }
 
 .guarantees {
@@ -1603,6 +1643,8 @@ select {
 }
 
 .popular__item {
+  text-decoration: none;
+  color: inherit;
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 25%;
   -ms-flex: 1 1 25%;
@@ -1686,6 +1728,9 @@ select {
   font-size: 24px;
   margin: 0;
   padding: 0 10px;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
 }
 
 .popular__item-num {
@@ -1698,6 +1743,15 @@ select {
   font-family: "PTRootUI-Bold", sans-serif;
   line-height: .8;
   font-size: 99px;
+}
+
+.popular__item:hover .popular__item-caption {
+  text-decoration: underline;
+}
+
+.popular__item:hover .popular__item-price {
+  background-color: #5f89fc;
+  color: #fff;
 }
 
 .popular__item--1 {
@@ -2160,6 +2214,7 @@ select {
   }
   .menu__item {
     display: block;
+    color: #000;
   }
   .menu__item a, .menu__item span {
     display: block;
@@ -2182,8 +2237,16 @@ select {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
+  .menu__sub-item {
+    color: #000;
+  }
   .menu__sub-item a {
     padding: 10px 15px;
+    background-color: #eef2fd;
+    text-transform: uppercase;
+  }
+  .menu__sub-item a:hover {
+    color: #5f89fc;
     background-color: #eef2fd;
   }
   .menu__sub-item + .menu__sub-item {

@@ -8,14 +8,34 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-      *,
-      *::after,
-      *::before {
-      	//- outline: 1px solid rgba(255,0,0,.5) !important
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      var _GET = function(v) {
+      var url = window
+      .location
+      .search
+      .replace('?', '')
+      .split('&')
+      .reduce(
+      function(p, e) {
+      var a = e.split('=');
+      p[decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+      return p;
+      }, {}
+      )
+      return url[v]
       }
-    </style>
-    <script src="https://ctr-localhost.ru/vlad/jq.js"></script>
+      function geo() {
+      var metro = _GET('metro')
+      if (metro) {
+      $('.hero').addClass('hero--metro').removeClass('hero--main')
+      if(!$('.hero').hasClass('hero--single')) $('.hero__img').attr('src', 'img/hero-img-geo.png')
+      $('.js-metro').text('у метро ' + metro)
+      }
+      }
+      
+      
+    </script>
   </head>
   <body>
     <div class="w-page">
@@ -36,20 +56,24 @@
             <button class="header__burger js-menuToggle"></button>
             <nav class="menu">
               <ul class="menu__list">
-                <li class="menu__item active"><a href="#">О компании</a></li>
+                <li class="menu__item"><a href="#about">О компании</a></li>
                 <li class="menu__item menu__item--hasSub"><span>Услуги</span>
                   <div class="menu__sub">
-                    <div class="menu__sub-item"><a href="">Услуга 1</a></div>
-                    <div class="menu__sub-item"><a href="">Услуга 1</a></div>
-                    <div class="menu__sub-item"><a href="">Услуга 1</a></div>
-                    <div class="menu__sub-item"><a href="">Услуга 1</a></div>
+                    <div class="menu__sub-item"><a href="remont-noutbukov.html">Ремонт ноутбуков</a></div>
+                    <div class="menu__sub-item"><a href="nastrojka-kompyuterov.html">Настройка компьютеров</a></div>
+                    <div class="menu__sub-item"><a href="ustanovka-windows.html">Установка Windows</a></div>
+                    <div class="menu__sub-item"><a href="nastrojka-wi-fi-routera.html">Настройка Wi-Fi роутера</a></div>
+                    <div class="menu__sub-item"><a href="vosstanovlenie-dannyh.html">Восстановление данных</a></div>
+                    <div class="menu__sub-item"><a href="ustanovka-antivirusa.html">Установка антивируса</a></div>
+                    <div class="menu__sub-item"><a href="udalenie-virusov.html">Удаление вирусов</a></div>
+                    <div class="menu__sub-item"><a href="ustanovka-programm.html">Установка программ</a></div>
                   </div>
                 </li>
-                <li class="menu__item"><a href="#">Преимущества</a></li>
-                <li class="menu__item"><a href="#">Отзывы</a></li>
-                <li class="menu__item"><a href="#">Цены</a></li>
-                <li class="menu__item"><a href="#">Популярные поломки</a></li>
-                <li class="menu__item"><a href="#">Контакты</a></li>
+                <li class="menu__item"><a href="#advantages">Преимущества</a></li>
+                <li class="menu__item"><a href="#reviews">Отзывы</a></li>
+                <li class="menu__item"><a href="#pricelist">Цены</a></li>
+                <li class="menu__item"><a href="#popular">Популярные поломки</a></li>
+                <li class="menu__item"><a href="#contacts">Контакты</a></li>
               </ul>
             </nav>
           </div>
@@ -59,7 +83,7 @@
         <div class="container">
           <div class="hero__inner">
             <div class="hero__left">
-              <h1 class="hero__title">Ремонт компьютеров <strong>в день обращения </strong></h1>
+              <h1 class="hero__title"><span class="js-title">Ремонт компьютеров</span> <span class="js-metro"></span> <strong>в день обращения </strong></h1>
               <ul class="hero__list">
                 <li>В течение 30 минут мастер будет у Вас</li>
                 <li>Мастера со стажем, опыт более 10 лет</li>
@@ -109,7 +133,7 @@
           </p>
         </div>
       </section>
-      <section class="reviews">
+      <section class="reviews" id="reviews">
         <div class="container">
           <div class="reviews__inner">
             <h2 class="reviews__title">За годы работы получили <strong>сотни отзывов</strong></h2>
@@ -223,7 +247,7 @@
           </div>
         </div>
       </section>
-      <section class="pricelist">
+      <section class="pricelist" id="pricelist">
         <div class="container">
           <div class="pricelist__inner">
             <h2 class="pricelist__title">Цены на услуги <strong>сервисного центра</strong></h2>
@@ -342,12 +366,11 @@
           </div>
         </div>
       </section>
-      <section class="popular">
+      <section class="popular" id="popular">
         <div class="container">
           <div class="popular__inner">
             <h2 class="popular__title">Популярные <strong>поломки</strong></h2>
-            <div class="popular__list">
-              <div class="popular__item popular__item--1">
+            <div class="popular__list"><a class="popular__item popular__item--1" href="ne-rabotaet-kompyuter.html">
                 <p class="popular__item-caption">Не работает компьютер</p><img class="popular__item-pic" src="img/popular-pic-1.png" alt="">
                 <ul class="popular__item-services">
                   <li>Переустановка Windows</li>
@@ -356,9 +379,7 @@
                   <li>Замена блока питания</li>
                   <li>Замена разъема</li>
                 </ul>
-                <p class="popular__item-price">~&nbsp;200&nbsp;&#8381;</p>
-              </div>
-              <div class="popular__item popular__item--2">
+                <p class="popular__item-price">~&nbsp;200&nbsp;&#8381;</p></a><a class="popular__item popular__item--2" href="ne-podklushaetsja-k-seti.html">
                 <p class="popular__item-caption">Не  подключается к сети</p>
                 <ul class="popular__item-services">
                   <li>Настройка Wi-Fi</li>
@@ -367,9 +388,7 @@
                   <li>Настройка интернета</li>
                 </ul>
                 <p class="popular__item-price">~&nbsp;250&nbsp;&#8381;</p>
-                <p class="popular__item-num">02</p>
-              </div>
-              <div class="popular__item popular__item--3">
+                <p class="popular__item-num">02</p></a><a class="popular__item popular__item--3" href="problemi-s-windows">
                 <p class="popular__item-caption">Проблемы с Windows</p>
                 <ul class="popular__item-services">
                   <li>Переустановка Windows</li>
@@ -378,9 +397,7 @@
                   <li>Установка драйверов и обновлений</li>
                 </ul>
                 <p class="popular__item-price">~&nbsp;200&nbsp;&#8381;</p>
-                <p class="popular__item-num">03</p>
-              </div>
-              <div class="popular__item popular__item--4">
+                <p class="popular__item-num">03</p></a><a class="popular__item popular__item--4" href="ne-vidit-vneshnie-ustrojstva.html">
                 <p class="popular__item-caption">Не  видит внешние устройства?</p>
                 <ul class="popular__item-services">
                   <li>Замена жесткого диска</li>
@@ -388,9 +405,7 @@
                   <li>Установка драйверов и обновлений</li>
                 </ul>
                 <p class="popular__item-price">~&nbsp;100&nbsp;&#8381;</p>
-                <p class="popular__item-num">04</p>
-              </div>
-              <div class="popular__item popular__item--5">
+                <p class="popular__item-num">04</p></a><a class="popular__item popular__item--5" href="net-zvuka.html">
                 <p class="popular__item-caption">Нет звука</p>
                 <ul class="popular__item-services">
                   <li>Подключения и настройка оборудования</li>
@@ -398,9 +413,7 @@
                   <li>Удаление вирусов</li>
                 </ul>
                 <p class="popular__item-price">~&nbsp;100&nbsp;&#8381;</p>
-                <p class="popular__item-num">05</p>
-              </div>
-              <div class="popular__item popular__item--6">
+                <p class="popular__item-num">05</p></a><a class="popular__item popular__item--6" href="virusi.html">
                 <p class="popular__item-caption">Вирусы</p>
                 <ul class="popular__item-services">
                   <li>Удаление вируса</li>
@@ -408,8 +421,7 @@
                   <li>Установка антивирусной защиты и обновлений</li>
                 </ul>
                 <p class="popular__item-price">~&nbsp;100&nbsp;&#8381;</p>
-                <p class="popular__item-num">06</p>
-              </div>
+                <p class="popular__item-num">06</p></a>
               <form class="popular__item popular__item--7">
                 <p class="popular__item-caption">Остались вопросы?</p>
                 <p class="popular__item-text">Оставьте заявку, и наш оператор перезвонит Вам через 2 минуты</p>
@@ -421,7 +433,7 @@
           </div>
         </div>
       </section>
-      <section class="advantages">
+      <section class="advantages" id="advantages">
         <div class="container">
           <div class="advantages__inner">
             <h2 class="advantages__title">Доверьте ремонт <strong>Профессионалам</strong></h2>
@@ -461,7 +473,7 @@
           </div>
         </div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="container">
           <div class="about__inner">
             <h2 class="about__title">Profi <strong>Master</strong></h2>
@@ -469,7 +481,7 @@
           </div>
         </div>
       </section>
-      <section class="contacts">
+      <section class="contacts" id="contacts">
         <div class="container">
           <div class="contacts__inner">
             <h2 class="contacts__title">Контактная <strong>Информация</strong></h2>

@@ -123,6 +123,7 @@ select
 .header
 	position: relative
 	z-index: 1
+	height: auto !important
 	&__inner
 		@extend %container
 		@extend %grid
@@ -250,6 +251,10 @@ select
 			a
 				display: block
 				padding: 5px 15px
+				text-transform: initial
+				&:hover
+					background-color: #3293ff
+					color: #fff
 			&+&
 				border-top: 1px solid transparent
 	&__back
@@ -297,7 +302,7 @@ select
 		strong
 			font-size: 42px
 			text-transform: lowercase
-			display: inline-block
+			display: block
 			margin-top: 8px
 			color: #2f353f
 			font-weight: 400
@@ -441,8 +446,26 @@ select
 			bottom: 25px
 			right: 50%
 			margin-right: -710px
-
-
+	&--metro
+		.hero__inner
+			position: relative
+		.hero__title
+			max-width: 500px
+			font-size: 43px
+			strong
+				display: none
+		.hero__img
+			top: -10px
+			left: 500px
+		.hero__list
+			font-size: 17px
+			li
+				display: inline-block
+				vertical-align: top
+				max-width: 31%
+			li+li
+				margin-left: 2%
+				margin-top: 0
 
 
 .guarantees
@@ -1132,6 +1155,8 @@ select
 		margin: 1px 0 0 1px
 		overflow: visible
 	&__item
+		text-decoration: none
+		color: inherit
 		flex: 1 1 25%
 		border: 1px solid #c5d4e7
 		margin-top: -1px
@@ -1185,6 +1210,7 @@ select
 			font-size: 24px
 			margin: 0
 			padding: 0 10px
+			transition: all .2s
 		&-num
 			position: absolute
 			color: #d3dbe9
@@ -1195,6 +1221,12 @@ select
 			font-family: $font2_700
 			line-height: .8
 			font-size: 99px
+		&:hover
+			.popular__item-caption
+				text-decoration: underline
+			.popular__item-price
+				background-color: $blue
+				color: #fff
 		&--1
 			flex-basis: 50%
 			box-shadow: inset 0 0 0 3px #c5d4e7
