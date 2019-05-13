@@ -291,7 +291,7 @@ var sliders = function() {
         adaptiveHeight: true
     })
 
-    mobileSlick($(".scheme__list"), {
+    mobileSlick($(".popular__list"), {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -300,7 +300,7 @@ var sliders = function() {
         adaptiveHeight: true
     })
 
-    mobileSlick($(".popular__list"), {
+    mobileSlick($(".guarantees__list"), {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -331,7 +331,107 @@ function mobileSlick(el, op) {
     }
 }
 
+function map() {
+    /*YA.Map*/
 
+    ymaps.ready(function() {
+        var myMap = new ymaps.Map('map', {
+                center: [55.751574, 37.573856],
+                zoom: 8,
+                behaviors: ['default', 'scrollZoom']
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
+            clusterer = new ymaps.Clusterer({
+                preset: 'islands#invertedBlueClusterIcons',
+                groupByCoordinates: false,
+                clusterDisableClickZoom: true,
+                clusterHideIconOnBalloonOpen: false,
+                geoObjectHideIconOnBalloonOpen: false
+            }),
+
+            getPointData = function(index) {
+                return {
+                    balloonContentBody: 'Мастер ' + index,
+                    clusterCaption: 'Мастер ' + index
+                };
+            },
+
+            getPointOptions = function() {
+                return {
+                    preset: 'islands#blueCircleDotIcon'
+                };
+            },
+            points = [
+                [55.768672, 37.628633],
+                [55.810648, 37.562371],
+                [55.829204, 37.661935],
+                [55.803301, 37.405816],
+                [55.794018, 37.298013],
+                [55.905266, 37.720300],
+                [55.940441, 37.509278],
+                [55.893397, 37.605408],
+                [55.775923, 37.896546],
+                [55.753946, 37.622607],
+                [55.752204, 37.635653],
+                [55.770207, 37.627756],
+                [55.727993, 37.669299],
+                [55.802465, 37.808206],
+                [55.802078, 37.720659],
+                [55.802658, 37.500589],
+                [55.662271, 37.862544],
+                [55.620159, 37.735129],
+                [55.628318, 37.647925],
+                [55.679176, 37.632132],
+                [55.690038, 37.522268],
+                [55.644631, 37.397986],
+                [55.534486, 37.037221],
+                [55.630088, 37.855000],
+                [55.638481, 37.842307],
+                [55.611227, 38.099245],
+                [55.622460, 38.098607],
+                [55.588857, 38.146124],
+                [55.652157, 37.869779],
+                [55.913768, 37.996886],
+                [55.838884, 37.956377],
+                [55.794531, 37.964296],
+                [55.940577, 37.502911],
+                [55.969517, 37.499392],
+                [55.966039, 37.497182],
+                [55.994510, 37.215768],
+                [55.983381, 37.157727],
+                [55.503626, 37.553973],
+                [55.552250, 37.717715],
+                [55.930051, 37.817122],
+                [55.691170, 37.898971],
+                [55.679193, 37.896353],
+                [56.008613, 37.821605],
+                [55.983060, 37.845699],
+                [55.892842, 37.445173],
+                [55.893180, 37.432942]
+            ],
+            geoObjects = [];
+
+        for (var i = 0, len = points.length; i < len; i++) {
+            geoObjects[i] = new ymaps.Placemark(points[i], getPointData(i), getPointOptions());
+        }
+
+        clusterer.options.set({
+            gridSize: 80,
+            clusterDisableClickZoom: true
+        });
+
+        clusterer.add(geoObjects);
+        myMap.geoObjects.add(clusterer);
+
+        myMap.setBounds(clusterer.getBounds(), {
+            checkZoomRange: true
+        });
+
+    });
+
+    /*YA.Map*/
+}
 
 $(function() {
     menu()
@@ -355,4 +455,6 @@ $(function() {
     });
 
     geo()
+
+    map()
 });

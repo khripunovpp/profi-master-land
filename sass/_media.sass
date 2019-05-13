@@ -111,7 +111,7 @@
 		padding: 20px 0
 		&__list
 			display: block
-			margin: 0
+			margin: -5px 0 0
 			transform: none
 		&__item
 			display: block
@@ -196,19 +196,49 @@
 				margin-top: 5px !important
 				margin-left: 0 !important
 		&__service,
-		&__discount
+		&__call
 			max-width: 320px
 			font-size: 16px
 			strong
 				font-size: 25px
 		&__service
 			padding: 12px 25px
-		&__discount
-			margin-top: 10px
-			padding: 12px 125px 12px 25px
+		&__call
+			padding: 25px 15px
+			display: table
+			margin: 15px auto 0
+			box-shadow: 0 10px 20px rgba(#575757, .1)
+			background-color: #fff
+			border-radius: 4px
+			font-family: $font2_500
+			font-size: 18px
+			width: 100%
+			position: relative
+			overflow: hidden
+			strong
+				position: absolute
+				top: 50%
+				right: 15px
+				transform: translateY(-50%)
+			button
+				background-color: #5f89fc
+				color: #fff
+				padding: 10px 10px
+				border-radius: 3px
+				border: none
+				text-transform: uppercase
+				font-weight: 700
 			&::after
-				transform: scale(.8)
-				right: -50px
+				content: ''
+				position: absolute
+				top: 50%
+				right: -45px
+				margin-top: -86px
+				background-image: url(../img/hero-discount-bg.png)
+				width: 173px
+				height: 172px
+		&__discount
+			display: none
 		&__footer
 			display: none
 		&--main
@@ -276,14 +306,16 @@
 		padding: 20px 0
 		&__list
 			display: block
-			margin: -10px
+			margin: 0 -15px
 		&__item
 			width: auto
 			display: block
-			padding: 20px 100px 20px 20px
+			padding: 0 100px 0 15px
 			text-align: left
 			background-position: right center
-			margin: 10px
+			margin: 0
+			float: left
+			border: none
 			&-title
 				font-size: 20px
 				margin-bottom: 10px
@@ -296,24 +328,7 @@
 			&--3
 				background-image: url(../img/guarantees-img-3-mobile.png)
 		&__promo
-			background-color: #7e6fb4
-			background-image: url(../img/guarantees-promo-bg-mobile.png)
-			background-position: right bottom
-			padding: 20px 25px
-			font-size: 18px
-			small
-				font-size: 14px
-				display: block
-				margin-top: 2px
-			&-btn
-				position: relative
-				top: auto
-				right: auto
-				margin: 25px 0 0 -25px
-				border-radius: 0 6px 6px 0
-				color: #5d75d7
-				background-color: #fff
-				font-size: 16px
+			display: none
 
 	.reviews
 		padding: 20px 0
@@ -340,24 +355,7 @@
 			display: block
 
 	.breakdowns
-		padding: 20px 0
-		&__mobileCallback
-			margin: 0 auto 15px
-			max-width: none
-		&__title
-			font-size: 20px
-			margin-bottom: 15px
-		&__list
-			display: block
-			margin: 0
-		&__item
-			display: block
-			flex: none
-			float: left
-			margin: 0
-		&__name
-			br
-				display: none
+		display: none
 
 	.pricelist
 		padding: 20px 0
@@ -425,10 +423,13 @@
 			display: block
 			width: auto
 			margin: 0
-			float: left
+			&+&
+			margin-top: 15px
 			&-description
 				max-width: 90%
 				display: inline-block
+			&--3
+				display: none
 		&__form
 			margin: 20px -270px 0
 			display: block
@@ -531,20 +532,14 @@
 			&-description
 				font-size: 14px
 				max-width: 85%
+			&--2,
+			&--3
+				display: none
 			&+&
 				margin-top: 25px
-		&__mobileCallback
-			margin-top: 25px
 
 	.about
-		padding: 20px 0
-		&__title
-			font-size: 20px
-			margin-bottom: 15px
-		&__pic
-			margin: 0 0 15px
-		&__text
-			font-size: 16px
+		display: none
 
 	.contacts
 		padding: 20px 0
@@ -584,7 +579,7 @@
 				font-size: 20px
 		&__form
 			display: block
-			margin: 15px 0
+			margin: 15px 0 0
 			&-caption
 				padding-right: 0
 				max-width: none
@@ -597,15 +592,7 @@
 				margin-left: 0
 				max-width: none
 		&__small
-			flex-direction: column-reverse
-		&__copy,
-		&__privacepolicy
-			text-align: center
-			width: auto
-		&__privacepolicy
-			padding-left: 0
-		&__copy
-			margin: 25px 0 0
+			display: none
 
 	.modal
 		&__box

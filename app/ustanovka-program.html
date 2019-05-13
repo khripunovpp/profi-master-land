@@ -56,9 +56,10 @@
             <button class="header__burger js-menuToggle"></button>
             <nav class="menu">
               <ul class="menu__list">
-                <li class="menu__item"><a href="#about">О компании</a></li>
+                <li class="menu__item hide-on-mobile"><a href="#about">О компании</a></li>
                 <li class="menu__item menu__item--hasSub"><span>Услуги</span>
                   <div class="menu__sub">
+                    <div class="menu__sub-item"><a href="/">Ремонт компьютеров</a></div>
                     <div class="menu__sub-item"><a href="remont-noutbukov.html">Ремонт ноутбуков</a></div>
                     <div class="menu__sub-item"><a href="nastrojka-kompyuterov.html">Настройка компьютеров</a></div>
                     <div class="menu__sub-item"><a href="ustanovka-windows.html">Установка Windows</a></div>
@@ -87,15 +88,17 @@
               <ul class="hero__list">
                 <li>В течение 30 минут мастер будет у Вас</li>
                 <li>Мастера со стажем, опыт более 10 лет</li>
-                <li>Работаем без выходных</li>
+                <li>Гарантия 1 год</li>
               </ul><img class="hero__img" src="img/hero-img-single-7.jpg" alt="">
               <p class="hero__service">Настройка устройств <strong>189&nbsp;&#8381;</strong><span class="hero__service-icon hero__service-icon--6"></span></p>
               <p class="hero__discount">Скидки<br> пенсионерам <strong>35%</strong></p>
+              <p class="hero__call">
+                <button class="js-modal">Вызвать мастера</button> <strong>-25%</strong>
+              </p>
               <div class="hero__footer">
                 <button class="hero__button btn js-modal">Заказать</button>
                 <div class="hero__phones"><a class="hero__phone" href="tel:+74953749832">+7 (495) 374-98-32</a></div>
               </div>
-              <button class="hero__mobileCallback mobileCallback js-modal">Заказать ремонт <strong>-25%</strong></button>
             </div>
             <div class="hero__right">
               <p class="hero__step"><i>1</i> Выезд мастера<br> БЕСПЛАТНО</p>
@@ -115,16 +118,16 @@
           <div class="guarantees__inner">
             <ul class="guarantees__list">
               <li class="guarantees__item guarantees__item--1">
+                <p class="guarantees__item-title">Бесплатная диагностика и выезд мастера</p>
+                <p class="guarantees__item-text">Мы бесплатно доставим вашу технику в ремонт и обратно</p>
+              </li>
+              <li class="guarantees__item guarantees__item--2">
                 <p class="guarantees__item-title">Оригинальные запчасти</p>
                 <p class="guarantees__item-text">Мы используем только оригинальные комплектующие</p>
               </li>
-              <li class="guarantees__item guarantees__item--2">
+              <li class="guarantees__item guarantees__item--3">
                 <p class="guarantees__item-title">Ремонт в день обращения</p>
                 <p class="guarantees__item-text">Срок ремонта не более 2 часов с момента, проведения диагностики</p>
-              </li>
-              <li class="guarantees__item guarantees__item--3">
-                <p class="guarantees__item-title">Бесплатная диагностика и выезд мастера</p>
-                <p class="guarantees__item-text">Мы бесплатно доставим вашу технику в ремонт и обратно</p>
               </li>
             </ul>
           </div>
@@ -265,28 +268,28 @@
                   <div class="table__cell">Доставка и диагностика</div>
                   <div class="table__cell">0&nbsp;&#8381;</div>
                   <div class="table__cell">
-                    <button class="js-modal">Закзать</button>
+                    <button class="js-modal">Заказать</button>
                   </div>
                 </div>
                 <div class="table__row">
                   <div class="table__cell">Замена видеокарты на ноутбуке</div>
                   <div class="table__cell">1750&nbsp;&#8381;</div>
                   <div class="table__cell">
-                    <button class="js-modal">Закзать</button>
+                    <button class="js-modal">Заказать</button>
                   </div>
                 </div>
                 <div class="table__row">
                   <div class="table__cell">Ремонт подсветки в ноутбуке</div>
                   <div class="table__cell">1750&nbsp;&#8381;</div>
                   <div class="table__cell">
-                    <button class="js-modal">Закзать</button>
+                    <button class="js-modal">Заказать</button>
                   </div>
                 </div>
                 <div class="table__row">
                   <div class="table__cell">Замена клавиатуры на ноутбуке</div>
                   <div class="table__cell">1750&nbsp;&#8381;</div>
                   <div class="table__cell">
-                    <button class="js-modal">Закзать</button>
+                    <button class="js-modal">Заказать</button>
                   </div>
                 </div>
                 <div class="table__spacer">
@@ -301,21 +304,21 @@
                   <div class="table__cell">fdbzdf</div>
                   <div class="table__cell">1750&nbsp;&#8381;</div>
                   <div class="table__cell">
-                    <button class="js-modal">Закзать</button>
+                    <button class="js-modal">Заказать</button>
                   </div>
                 </div>
                 <div class="table__row">
                   <div class="table__cell">fdbzdf</div>
                   <div class="table__cell">1750&nbsp;&#8381;</div>
                   <div class="table__cell">
-                    <button class="js-modal">Закзать</button>
+                    <button class="js-modal">Заказать</button>
                   </div>
                 </div>
                 <div class="table__row">
                   <div class="table__cell">fdbzdf</div>
                   <div class="table__cell">1750&nbsp;&#8381;</div>
                   <div class="table__cell">
-                    <button class="js-modal">Закзать</button>
+                    <button class="js-modal">Заказать</button>
                   </div>
                 </div>
               </div>
@@ -333,25 +336,25 @@
                 <div class="scheme__item-icon"></div>
                 <p class="scheme__item-title">Заказ</p>
                 <p class="scheme__item-description">Вы делаете заказ по телефону или онлайн через наш сайт</p>
-                <p class="scheme__item-num">01</p>
+                <p class="scheme__item-num"></p>
               </div>
               <div class="scheme__item scheme__item--2">
                 <div class="scheme__item-icon"></div>
                 <p class="scheme__item-title">Диагностика</p>
                 <p class="scheme__item-description">В срок от 30 минут мастер приезжает к вам и производит диагностику</p>
-                <p class="scheme__item-num">02</p>
+                <p class="scheme__item-num"></p>
               </div>
               <div class="scheme__item scheme__item--3">
                 <div class="scheme__item-icon"></div>
                 <p class="scheme__item-title">Стоимость</p>
                 <p class="scheme__item-description">Если вас устраивает стоимость услуг, мы приступаем к работам</p>
-                <p class="scheme__item-num">03</p>
+                <p class="scheme__item-num"></p>
               </div>
               <div class="scheme__item scheme__item--4">
                 <div class="scheme__item-icon"></div>
                 <p class="scheme__item-title">Исправная техника</p>
                 <p class="scheme__item-description">По окончании работ вы получаете исправную технику и бланк БСО</p>
-                <p class="scheme__item-num">04</p>
+                <p class="scheme__item-num"></p>
               </div>
             </div>
             <form class="scheme__form" action="" method="post">
@@ -469,7 +472,6 @@
                 <p class="advantages__item-description">Даем гарантию на любой ремонт и запчасти – от 90 дней</p>
               </div>
             </div>
-            <button class="advantages__mobileCallback mobileCallback js-modal">Заказать ремонт <strong>-25%</strong></button>
           </div>
         </div>
       </section>
@@ -486,10 +488,9 @@
           <div class="contacts__inner">
             <h2 class="contacts__title">Контактная <strong>Информация</strong></h2>
             <p class="contacts__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Рот бросил текстов строчка необходимыми агенство великий знаках однажды она, безопасную рукопись! Всеми, текста! Заглавных, своего. Океана это обеспечивает точках языком! Над, пояс то страну, лучше рукопись о реторический агенство. Грустный свое, имеет буквоград буквенных свой своих, родного собрал то.</p>
-            <div class="contacts__item"><span>Россия, Москва,<br> Малая Юшуньская улица, 1, корп. 2</span></div>
             <div class="contacts__item"><a href="tel:+74953749832">+7 (495) 374-98-32</a><small>Многоканальная линия. Консультации и прием заявок.</small></div>
             <div class="contacts__item"><a href="mailto:info@profimaster.pro">info@profimaster.pro</a><small>По вопросам и предложениям обращаться на почту</small></div>
-            <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/-/CCBubOOZ?width=100%" frameborder="1" allowfullscreen="true" id="map"></iframe>
+            <div class="contacts__map" id="map"></div>
           </div>
         </div>
       </section>

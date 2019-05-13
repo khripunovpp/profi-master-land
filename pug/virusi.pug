@@ -54,11 +54,13 @@ html
 						button.header__burger.js-menuToggle
 						nav.menu
 							ul.menu__list
-								li.menu__item
+								li.menu__item.hide-on-mobile
 									a(href="#about") О компании
 								li.menu__item.menu__item--hasSub
 									span Услуги
 									.menu__sub
+										.menu__sub-item
+											a(href="/") Ремонт компьютеров
 										.menu__sub-item
 											a(href="remont-noutbukov.html") Ремонт ноутбуков
 										.menu__sub-item
@@ -94,16 +96,16 @@ html
 							ul.hero__list
 								li В течение 30 минут мастер будет у Вас
 								li Мастера со стажем, опыт более 10 лет
-								li Работаем без выходных
+								li Гарантия 1 год
 							img.hero__img(src="img/hero-img-single-12.png", alt="")
 							p.hero__service Удаление вирусов   #[strong 540&nbsp;&#8381;]
 								span.hero__service-icon.hero__service-icon--5
 							p.hero__discount Скидки#[br] пенсионерам #[strong 35%]
+							p.hero__call #[button.js-modal Вызвать мастера] #[strong -25%]
 							.hero__footer
 								button.hero__button.btn.js-modal Заказать
 								.hero__phones
 									a.hero__phone(href="tel:+74953749832") +7 (495) 374-98-32
-							button.hero__mobileCallback.mobileCallback.js-modal Заказать ремонт #[strong -25%]
 						.hero__right
 							p.hero__step #[i 1] Выезд мастера#[br] БЕСПЛАТНО
 							p.hero__step #[i 2] Диагностика#[br] БЕСПЛАТНО
@@ -118,14 +120,14 @@ html
 					.guarantees__inner
 						ul.guarantees__list
 							li.guarantees__item.guarantees__item--1
-								p.guarantees__item-title Оригинальные запчасти
-								p.guarantees__item-text Мы используем только оригинальные комплектующие
-							li.guarantees__item.guarantees__item--2
-								p.guarantees__item-title Ремонт в день обращения
-								p.guarantees__item-text Срок ремонта не более 2 часов с момента, проведения диагностики
-							li.guarantees__item.guarantees__item--3
 								p.guarantees__item-title Бесплатная диагностика и выезд мастера
 								p.guarantees__item-text Мы бесплатно доставим вашу технику в ремонт и обратно
+							li.guarantees__item.guarantees__item--2
+								p.guarantees__item-title Оригинальные запчасти
+								p.guarantees__item-text Мы используем только оригинальные комплектующие
+							li.guarantees__item.guarantees__item--3
+								p.guarantees__item-title Ремонт в день обращения
+								p.guarantees__item-text Срок ремонта не более 2 часов с момента, проведения диагностики
 					p.guarantees__promo Бесплатная#[br] диагностика #[small вашей техники]
 						button.guarantees__promo-btn.btn.js-modal Узнать подробнее
 
@@ -150,63 +152,6 @@ html
 								span.reviews__stars.reviews__stars--4 #[i] #[i] #[i] #[i] #[i]
 								p.reviews__text Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, quidem, neque. Sunt, dolores enim ad.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, quidem, ning elit. Repudiandae, quidem, neque. Sunt, dolores enim ad.
 
-			section.breakdowns
-				.container
-					.breakdowns__inner
-						button.breakdowns__mobileCallback.mobileCallback.js-modal Заказать ремонт #[strong -25%]
-						h2.breakdowns__title Определите вашу #[strong поломку]
-						.breakdowns__list
-							.breakdowns__item(data-price="455")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_1')
-								p.breakdowns__name Не загружается
-							.breakdowns__item(data-price="43455")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_2')
-								p.breakdowns__name Выдает ошибку
-							.breakdowns__item(data-price="34")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_3')
-								p.breakdowns__name Поймал вирус
-							.breakdowns__item(data-price="64")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_4')
-								p.breakdowns__name Компьютер тормозит и греется
-							.breakdowns__item(data-price="455")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_5')
-								p.breakdowns__name Не проигрывается видео на компьютере
-							.breakdowns__item(data-price="54")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_6')
-								p.breakdowns__name Закончилось место на диске
-							.breakdowns__item(data-price="23")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_7')
-								p.breakdowns__name Пропал звук
-							.breakdowns__item(data-price="455")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_8-01')
-								p.breakdowns__name Нет сигнала
-							.breakdowns__item(data-price="756")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_9')
-								p.breakdowns__name Достали всплывающие окна#[br] и рекламные баннеры
-							.breakdowns__item(data-price="123")
-								.breakdowns__icon
-									svg.icon
-										use(xlink:href='#icon_10')
-								p.breakdowns__name Хочу перенести фотографии#[br] с телефона на компьютер
-
 			section.pricelist#pricelist
 				.container
 					.pricelist__inner
@@ -222,19 +167,19 @@ html
 								.table__row
 									.table__cell Доставка и диагностика
 									.table__cell 0&nbsp;&#8381;
-									.table__cell #[button.js-modal Закзать]
+									.table__cell #[button.js-modal Заказать]
 								.table__row
 									.table__cell Замена видеокарты на ноутбуке
 									.table__cell 1750&nbsp;&#8381;
-									.table__cell #[button.js-modal Закзать]
+									.table__cell #[button.js-modal Заказать]
 								.table__row
 									.table__cell Ремонт подсветки в ноутбуке
 									.table__cell 1750&nbsp;&#8381;
-									.table__cell #[button.js-modal Закзать]
+									.table__cell #[button.js-modal Заказать]
 								.table__row
 									.table__cell Замена клавиатуры на ноутбуке
 									.table__cell 1750&nbsp;&#8381;
-									.table__cell #[button.js-modal Закзать]
+									.table__cell #[button.js-modal Заказать]
 								.table__spacer
 									.table__cell
 									.table__cell
@@ -244,15 +189,15 @@ html
 								.table__row
 									.table__cell fdbzdf
 									.table__cell 1750&nbsp;&#8381;
-									.table__cell #[button.js-modal Закзать]
+									.table__cell #[button.js-modal Заказать]
 								.table__row
 									.table__cell fdbzdf
 									.table__cell 1750&nbsp;&#8381;
-									.table__cell #[button.js-modal Закзать]
+									.table__cell #[button.js-modal Заказать]
 								.table__row
 									.table__cell fdbzdf
 									.table__cell 1750&nbsp;&#8381;
-									.table__cell #[button.js-modal Закзать]
+									.table__cell #[button.js-modal Заказать]
 
 			section.scheme
 				.container
@@ -264,22 +209,22 @@ html
 								.scheme__item-icon
 								p.scheme__item-title Заказ
 								p.scheme__item-description Вы делаете заказ по телефону или онлайн через наш сайт
-								p.scheme__item-num 01
+								p.scheme__item-num
 							.scheme__item.scheme__item--2
 								.scheme__item-icon
 								p.scheme__item-title Диагностика
 								p.scheme__item-description В срок от 30 минут мастер приезжает к вам и производит диагностику
-								p.scheme__item-num 02
+								p.scheme__item-num
 							.scheme__item.scheme__item--3
 								.scheme__item-icon
 								p.scheme__item-title Стоимость
 								p.scheme__item-description Если вас устраивает стоимость услуг, мы приступаем к работам
-								p.scheme__item-num 03
+								p.scheme__item-num
 							.scheme__item.scheme__item--4
 								.scheme__item-icon
 								p.scheme__item-title Исправная техника
 								p.scheme__item-description По окончании работ вы получаете исправную технику и бланк БСО
-								p.scheme__item-num 04
+								p.scheme__item-num
 						form.scheme__form(action="", method="post")
 							p.scheme__form-step #[i 1] Выезд мастера#[br] БЕСПЛАТНО
 							p.scheme__form-step #[i 2] Диагностика#[br] БЕСПЛАТНО
@@ -382,7 +327,6 @@ html
 								.advantages__item-icon
 								p.advantages__item-caption Гарантия
 								p.advantages__item-description Даем гарантию на любой ремонт и запчасти – от 90 дней
-						button.advantages__mobileCallback.mobileCallback.js-modal Заказать ремонт #[strong -25%]
 
 			section.about#about
 				.container
@@ -399,14 +343,12 @@ html
 						h2.contacts__title Контактная #[strong Информация]
 						p.contacts__text Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Рот бросил текстов строчка необходимыми агенство великий знаках однажды она, безопасную рукопись! Всеми, текста! Заглавных, своего. Океана это обеспечивает точках языком! Над, пояс то страну, лучше рукопись о реторический агенство. Грустный свое, имеет буквоград буквенных свой своих, родного собрал то.
 						.contacts__item
-							span Россия, Москва,#[br] Малая Юшуньская улица, 1, корп. 2
-						.contacts__item
 							a(href="tel:+74953749832") +7 (495) 374-98-32
 							small Многоканальная линия. Консультации и прием заявок.
 						.contacts__item
 							a(href="mailto:info@profimaster.pro") info@profimaster.pro
 							small По вопросам и предложениям обращаться на почту
-						iframe(src='https://yandex.ru/map-widget/v1/-/CCBubOOZ?width=100%', frameborder='1', allowfullscreen='true').contacts__map#map
+						.contacts__map#map
 
 			footer.footer
 				.container

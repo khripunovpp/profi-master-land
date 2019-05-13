@@ -247,7 +247,6 @@ select
 		box-shadow: 0 25px 15px rgba(0,0,0,.1)
 		&-item
 			background-color: #fff
-			background-clip: padding-box
 			a
 				display: block
 				padding: 5px 15px
@@ -258,8 +257,6 @@ select
 			&.active
 				background-color: #3293ff
 				color: #fff
-			&+&
-				border-top: 1px solid transparent
 	&__back
 		color: $blue
 		&::before
@@ -343,6 +340,10 @@ select
 		position: relative
 		overflow: hidden
 		margin: 0
+	&__call
+		display: none
+		strong
+			color: $blue
 	&__service
 		padding: 23px 33px
 		strong
@@ -971,11 +972,11 @@ select
 				&::after
 					content: ''
 					position: absolute
-					top: 0
+					top: -1px
 					left: 20px
 					width: calc(100% - 40px)
-					height: 1px
-					background-color: #dfdfdf
+					height: 2px
+					background-color: #f1f1f1
 				&:nth-child(2)
 					font-weight: 700
 					color: #000
@@ -985,6 +986,10 @@ select
 						&__cell
 							&::after
 								display: none
+				&:hover
+					.table
+						&__cell
+							background-color: #ecf1ff
 				.table
 					&__cell
 						&:nth-child(1)
@@ -1077,6 +1082,7 @@ select
 		display: flex
 		margin: -15px
 		text-align: center
+		counter-reset: scheme
 	&__item
 		margin: 15px
 		border: 1px solid #c5d4e7
@@ -1115,6 +1121,9 @@ select
 			bottom: -15px
 			left: 50%
 			transform: translateX(-50%)
+			&::before
+				counter-increment: scheme
+				content: "0" counter(scheme)
 		&--1
 			&::before
 				background-image: url(../img/scheme-item-decor-1.png)
