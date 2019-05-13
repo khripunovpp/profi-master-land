@@ -154,6 +154,13 @@ html
 							.reviews__item
 								span.reviews__stars.reviews__stars--4 #[i] #[i] #[i] #[i] #[i]
 								p.reviews__text Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, quidem, neque. Sunt, dolores enim ad.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, quidem, ning elit. Repudiandae, quidem, neque. Sunt, dolores enim ad.
+						form.reviews__form(action="", method="post")
+							p.scheme__form-caption Вызовите мастера прямо сейчас и получите скидку
+							p.scheme__form-discount -25%
+							input(type="tel", name="phone", placeholder="Ваше телефон", required).scheme__form-field.field
+							input(type="hidden", name="form", value="shcheme")
+							button.scheme__form-btn.btn.js-submit Получить скидку
+							a(href="").scheme__privacypolicy Политика конфиденциальности и обработки персональных данных
 
 			section.breakdowns
 				.container
