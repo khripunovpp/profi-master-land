@@ -41,7 +41,7 @@ html
 			header.header
 				.header__top
 					.header__inner
-						.header__logo
+						a(href="/").header__logo
 							img.logo(src="img/logo.png", alt="")
 						.header__middle
 							span.bage.js-modal гарантия до 36 месяцев
@@ -121,13 +121,12 @@ html
 						ul.guarantees__list
 							li.guarantees__item.guarantees__item--1
 								p.guarantees__item-title Бесплатная диагностика и выезд мастера
-								p.guarantees__item-text Мы бесплатно доставим вашу технику в ремонт и обратно
+								p.guarantees__item-text Срок ремонта не более 2 часов с момента, проведения диагностики
 							li.guarantees__item.guarantees__item--2
 								p.guarantees__item-title Оригинальные запчасти
 								p.guarantees__item-text Мы используем только оригинальные комплектующие
 							li.guarantees__item.guarantees__item--3
-								p.guarantees__item-title Ремонт в день обращения
-								p.guarantees__item-text Срок ремонта не более 2 часов с момента, проведения диагностики
+								p.guarantees__item-title Диагностика техники
 					p.guarantees__promo Бесплатная#[br] диагностика #[small вашей техники]
 						button.guarantees__promo-btn.btn.js-modal Узнать подробнее
 
@@ -165,7 +164,7 @@ html
 									.table__cell Ремонт
 							.table__tail
 								.table__row
-									.table__cell Доставка и диагностика
+									.table__cell Выезд и диагностика
 									.table__cell 0&nbsp;&#8381;
 									.table__cell #[button.js-modal Заказать]
 								.table__row
@@ -226,13 +225,12 @@ html
 								p.scheme__item-description По окончании работ вы получаете исправную технику и бланк БСО
 								p.scheme__item-num
 						form.scheme__form(action="", method="post")
-							p.scheme__form-step #[i 1] Выезд мастера#[br] БЕСПЛАТНО
-							p.scheme__form-step #[i 2] Диагностика#[br] БЕСПЛАТНО
-							p.scheme__form-caption Вызовите мастера прямо сейчас и получите #[strong скидку&nbsp;#[small 25%]]
-							p.scheme__form-discount 25%
+							p.scheme__form-caption Вызовите мастера прямо сейчас и получите скидку
+							p.scheme__form-discount -25%
 							input(type="tel", name="phone", placeholder="Ваше телефон", required).scheme__form-field.field
 							input(type="hidden", name="form", value="shcheme")
 							button.scheme__form-btn.btn.js-submit Получить скидку
+							a(href="").scheme__privacypolicy Политика конфиденциальности и обработки персональных данных
 
 			section.popular#popular
 				.container
@@ -349,6 +347,7 @@ html
 							a(href="mailto:info@profimaster.pro") info@profimaster.pro
 							small По вопросам и предложениям обращаться на почту
 						.contacts__map#map
+					p.contacts__helper Наши мастера на заявках
 
 			footer.footer
 				.container
@@ -363,7 +362,7 @@ html
 						button.footer__form-btn.btn.js-submit Отправить
 					.footer__small
 						p.footer__copy © Проект принадлежит АО «Электронная Москва», 2019. Все права защищены.
-						a(href="").footer__privacepolicy Политика конфиденциальности и обработки персональных данных
+						a(href="").footer__privacypolicy Политика конфиденциальности и обработки персональных данных
 
 
 
@@ -415,6 +414,7 @@ html
 
 		include _sprite
 
+		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
 		script(src="js/slick.min.js")
 		script(src="js/jquery.sticky.js")
 		script(src="js/common.js")

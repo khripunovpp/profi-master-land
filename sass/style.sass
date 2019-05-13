@@ -651,6 +651,8 @@ select
 		margin-left: -1000px
 		margin-top: -340px
 		background-image: url(../img/reviews-bg.png)
+	&__form
+		display: none
 	&__title
 		color: #244c91
 		font-size: 35px
@@ -1206,7 +1208,7 @@ select
 			max-width: 270px
 			z-index: 1
 		&-discount
-			font-size: 70px
+			font-size: 63px
 			font-weight: 500
 			line-height: 1
 			margin: 0 35px 0 auto
@@ -1227,6 +1229,8 @@ select
 				margin-left: -100px
 				background-image: url(../img/circle.png)
 				background-size: cover
+	&__privacypolicy
+		display: none
 
 
 
@@ -1438,10 +1442,17 @@ select
 		position: absolute
 		top: 0
 		right: 0
-		height: calc(100% + 40px)
+		height: 100%
 		width: 50%
 		padding-left: 30px
 		border: none
+	&__helper
+		margin-left: calc(50% + 30px)
+		background-color: #d2e2ff
+		margin-top: 0
+		margin-bottom: 0
+		padding: 8px 15px
+		color: #000
 	&__item
 		color: $blue
 		font-size: 22px
@@ -1507,11 +1518,11 @@ select
 			vertical-align: middle
 			text-align: left
 	&__copy,
-	&__privacepolicy
+	&__privacypolicy
 		font-size: 12px
 		width: 50%
 		display: inline-block
-	&__privacepolicy
+	&__privacypolicy
 		text-align: right
 		padding-left: 50px
 		color: inherit

@@ -918,6 +918,10 @@ select {
   background-image: url(../img/reviews-bg.png);
 }
 
+.reviews__form {
+  display: none;
+}
+
 .reviews__title {
   color: #244c91;
   font-size: 35px;
@@ -1708,7 +1712,7 @@ select {
 }
 
 .scheme__form-discount {
-  font-size: 70px;
+  font-size: 63px;
   font-weight: 500;
   line-height: 1;
   margin: 0 35px 0 auto;
@@ -1732,6 +1736,10 @@ select {
   background-image: url(../img/circle.png);
   -webkit-background-size: cover;
   background-size: cover;
+}
+
+.scheme__privacypolicy {
+  display: none;
 }
 
 .popular {
@@ -2045,11 +2053,20 @@ select {
   position: absolute;
   top: 0;
   right: 0;
-  height: -webkit-calc(100% + 40px);
-  height: calc(100% + 40px);
+  height: 100%;
   width: 50%;
   padding-left: 30px;
   border: none;
+}
+
+.contacts__helper {
+  margin-left: -webkit-calc(50% + 30px);
+  margin-left: calc(50% + 30px);
+  background-color: #d2e2ff;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 8px 15px;
+  color: #000;
 }
 
 .contacts__item {
@@ -2146,20 +2163,20 @@ select {
   text-align: left;
 }
 
-.footer__copy, .footer__privacepolicy {
+.footer__copy, .footer__privacypolicy {
   font-size: 12px;
   width: 50%;
   display: inline-block;
 }
 
-.footer__privacepolicy {
+.footer__privacypolicy {
   text-align: right;
   padding-left: 50px;
   color: inherit;
   text-decoration: none;
 }
 
-.footer__privacepolicy:hover {
+.footer__privacypolicy:hover {
   text-decoration: underline;
 }
 
@@ -2202,7 +2219,7 @@ select {
 }
 
 @media only screen and (max-width: 1150px) {
-  .hero__service, .hero__discount {
+  .hero__service, .hero__discount, .hero__call {
     display: table;
   }
   .hero__discount {
@@ -2451,7 +2468,7 @@ select {
   .hero__call {
     padding: 25px 15px;
     display: table;
-    margin: 15px auto 0;
+    margin: 15px 0 0;
     -webkit-box-shadow: 0 10px 20px rgba(87, 87, 87, 0.1);
     box-shadow: 0 10px 20px rgba(87, 87, 87, 0.1);
     background-color: #fff;
@@ -2509,7 +2526,7 @@ select {
     margin: 0 auto;
     display: block;
   }
-  .hero--metro .hero__discount, .hero--metro .hero__mobileCallback {
+  .hero--metro .hero__call {
     margin-left: auto;
     margin-right: auto;
   }
@@ -2547,7 +2564,7 @@ select {
     max-width: 320px;
     width: 100%;
   }
-  .hero--single .hero__service, .hero--single .hero__discount, .hero--single .hero__mobileCallback {
+  .hero--single .hero__service, .hero--single .hero__discount, .hero--single .hero__mobileCallback, .hero--single .hero__call {
     margin-left: auto;
     margin-right: auto;
   }
@@ -2571,7 +2588,7 @@ select {
   .guarantees__item {
     width: auto;
     display: block;
-    padding: 0 100px 0 15px;
+    padding: 20px 100px 10px 15px;
     text-align: left;
     background-position: right center;
     margin: 0;
@@ -2599,6 +2616,7 @@ select {
   }
   .reviews {
     padding: 20px 0;
+    border-bottom: 1px solid #ddd;
   }
   .reviews__title {
     font-size: 20px;
@@ -2628,6 +2646,68 @@ select {
   }
   .reviews .slick-track {
     display: block;
+  }
+  .reviews__form {
+    display: block;
+    text-align: center;
+    padding: 25px 15px 5px;
+    margin: 55px -270px 0;
+    position: relative;
+    overflow: visible;
+  }
+  .reviews__form::before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    background-image: url(../img/callback-icon.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    margin-left: -40px;
+    top: -35px;
+  }
+  .reviews__form-caption {
+    width: 100%;
+    font-size: 18px;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
+    color: #244c91;
+    margin: 0 0 15px;
+    padding: 20px 280px 15px;
+    background-color: #ffffff;
+  }
+  .reviews__form-discount {
+    color: #244c91;
+    margin: 0 auto;
+  }
+  .reviews__form-discount::after {
+    display: none;
+  }
+  .reviews__form-field {
+    margin-top: 15px;
+    max-width: 295px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reviews__form-btn {
+    margin-left: 0;
+    margin-top: 10px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    max-width: 295px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reviews__privacypolicy {
+    display: block;
+    color: #555;
+    margin: 15px auto 0;
+    font-size: 11px;
+    max-width: 295px;
   }
   .breakdowns {
     display: none;
@@ -2724,83 +2804,47 @@ select {
     display: none;
   }
   .scheme__form {
-    margin: 20px -270px 0;
     display: block;
     text-align: center;
-    padding: 20px 270px;
-  }
-  .scheme__form-step {
+    background-color: #f6f4fe;
+    padding: 25px 15px;
+    margin: 45px -270px 0;
     position: relative;
-    padding-left: 70px;
-    min-height: 50px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.3;
-    margin: 0 auto 15px;
-    max-width: 320px;
-    text-align: left;
+    overflow: visible;
   }
-  .scheme__form-step i {
-    position: absolute;
-    top: 50%;
-    margin-top: -25px;
-    left: 0;
-    font-style: normal;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 27px;
-  }
-  .scheme__form-step i::after {
+  .scheme__form::before {
     content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    margin-top: -25px;
-    margin-left: -25px;
-    background-image: url(../img/circle.png);
+    width: 80px;
+    height: 80px;
+    background-image: url(../img/callback-icon.png);
     -webkit-background-size: cover;
     background-size: cover;
-  }
-  .scheme__form-step:nth-child(even) i::after {
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    margin-left: -40px;
+    top: -35px;
   }
   .scheme__form-caption {
-    max-width: 320px;
-    width: auto;
-    font-size: 15px;
-    padding: 0;
-    margin: 20px auto 15px;
-  }
-  .scheme__form-caption small {
-    display: inline;
-    font-size: inherit;
+    width: 100%;
+    font-size: 18px;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
+    color: #244c91;
+    margin: 0 0 15px;
+    padding: 20px 280px 15px;
+    background-color: #ffffff;
   }
   .scheme__form-discount {
+    color: #244c91;
+    margin: 0 auto;
+  }
+  .scheme__form-discount::after {
     display: none;
   }
   .scheme__form-field {
     margin-top: 15px;
-    max-width: 320px;
+    max-width: 295px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -2810,10 +2854,17 @@ select {
     margin-top: 10px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    max-width: 320px;
+    max-width: 295px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+  .scheme__privacypolicy {
+    display: block;
+    color: #555;
+    margin: 15px auto 0;
+    font-size: 11px;
+    max-width: 295px;
   }
   .popular {
     padding: 20px 0 0;
@@ -2899,6 +2950,9 @@ select {
     width: 100%;
     height: 200px;
     margin-top: 20px;
+  }
+  .contacts__helper {
+    margin-left: 0;
   }
   .footer {
     padding: 20px 0;
