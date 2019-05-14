@@ -306,7 +306,8 @@ var sliders = function() {
         arrows: false,
         dots: true,
         infinite: false,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        filter: $(".guarantees__item--3")
     })
 }
 

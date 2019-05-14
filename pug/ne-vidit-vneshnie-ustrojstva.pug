@@ -79,7 +79,7 @@ html
 											a(href="ustanovka-program.html") Установка программ
 								li.menu__item
 									a(href="#advantages") Преимущества
-								li.menu__item
+								li.menu__item.hide-on-mobile
 									a(href="#reviews") Отзывы
 								li.menu__item
 									a(href="#pricelist") Цены
@@ -94,18 +94,13 @@ html
 						.hero__left
 							h1.hero__title #[span.js-title Не видит внешние#[br] устройства] #[span.js-metro]
 							ul.hero__list
-								li В течение 30 минут мастер будет у Вас
-								li Мастера со стажем, опыт более 10 лет
+								li Через 30 мин. мастер у вас 
+								li Опыт более 10 лет
 								li Гарантия 1 год
 							img.hero__img(src="img/hero-img-single-10.png", alt="")
 							p.hero__service Настройка устройств  #[strong 150&nbsp;&#8381;]
 								span.hero__service-icon.hero__service-icon--6
-							p.hero__discount Скидки#[br] пенсионерам #[strong 35%]
 							p.hero__call #[button.js-modal Вызвать мастера] #[strong -25%]
-							.hero__footer
-								button.hero__button.btn.js-modal Заказать
-								.hero__phones
-									a.hero__phone(href="tel:+74953749832") +7 (495) 374-98-32
 						.hero__right
 							p.hero__step #[i 1] Выезд мастера#[br] БЕСПЛАТНО
 							p.hero__step #[i 2] Диагностика#[br] БЕСПЛАТНО
@@ -126,9 +121,10 @@ html
 								p.guarantees__item-title Оригинальные запчасти
 								p.guarantees__item-text Мы используем только оригинальные комплектующие
 							li.guarantees__item.guarantees__item--3
-								p.guarantees__item-title Диагностика техники
-					p.guarantees__promo Бесплатная#[br] диагностика #[small вашей техники]
-						button.guarantees__promo-btn.btn.js-modal Узнать подробнее
+								p.guarantees__item-title Ремонт в день обращения
+								p.guarantees__item-text Мы бесплатно доставим вашу технику в ремонт и обратно
+							li.guarantees__promo Бесплатная#[br] диагностика #[small вашей техники]
+								button.guarantees__promo-btn.btn.js-modal Узнать подробнее
 
 			section.reviews#reviews
 				.container
@@ -150,13 +146,7 @@ html
 							.reviews__item
 								span.reviews__stars.reviews__stars--4 #[i] #[i] #[i] #[i] #[i]
 								p.reviews__text Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, quidem, neque. Sunt, dolores enim ad.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, quidem, ning elit. Repudiandae, quidem, neque. Sunt, dolores enim ad.
-						form.reviews__form(action="", method="post")
-							p.scheme__form-caption Вызовите мастера прямо сейчас и получите скидку
-							p.scheme__form-discount -25%
-							input(type="tel", name="phone", placeholder="Ваше телефон", required).scheme__form-field.field
-							input(type="hidden", name="form", value="shcheme")
-							button.scheme__form-btn.btn.js-submit Получить скидку
-							a(href="").scheme__privacypolicy Политика конфиденциальности и обработки персональных данных
+
 
 			section.pricelist#pricelist
 				.container
@@ -232,7 +222,7 @@ html
 								p.scheme__item-description По окончании работ вы получаете исправную технику и бланк БСО
 								p.scheme__item-num
 						form.scheme__form(action="", method="post")
-							p.scheme__form-caption Вызовите мастера прямо сейчас и получите скидку
+							p.scheme__form-caption СДЕЛАЙТЕ ЗАКАЗ ОНЛАЙН И ПОЛУЧИТЕ СКИДКУ
 							p.scheme__form-discount -25%
 							input(type="tel", name="phone", placeholder="Ваше телефон", required).scheme__form-field.field
 							input(type="hidden", name="form", value="shcheme")

@@ -36,6 +36,7 @@ body
 	font-size: 14px
 	background-color: #fff
 	color: #575757
+	text-size-adjust: 100%
 	&.fixed
 		overflow: hidden
 
@@ -67,7 +68,7 @@ select
 
 %container
 	width: 100%
-	max-width: 1170px	
+	max-width: 1070px	
 	padding: 0 15px
 	margin: 0 auto
 
@@ -141,7 +142,7 @@ select
 	&__middle
 		text-align: center
 	&__top
-		padding: 30px 0
+		padding: 20px 0
 		border-bottom: 1px solid #909090
 	&__nav
 		@extend %container
@@ -267,7 +268,7 @@ select
 
 .hero
 	background-color: #f6f3fe
-	padding: 85px 0 50px
+	padding: 60px 0 40px
 	position: relative
 	overflow: hidden
 	opacity: .99
@@ -294,20 +295,20 @@ select
 		width: 370px
 	&__title
 		line-height: 1
-		font-size: 50px
+		font-size: 45px
 		color: #244c91
-		margin: 0 0 50px
+		margin: 0 0 40px
 		font-family: $font2_700
 		text-transform: uppercase
 		strong
-			font-size: 42px
+			font-size: 37px
 			text-transform: lowercase
 			display: block
-			margin-top: 8px
+			margin-top: 5px
 			color: #2f353f
 			font-weight: 400
 	&__list
-		margin: 50px 0
+		margin: 30px 0
 		font-size: 18px
 		li+li
 			margin-top: 5px
@@ -326,26 +327,34 @@ select
 		position: absolute
 		z-index: -1
 	&__service,
-	&__discount
+	&__call
 		background-color: #fff
 		border-radius: 4px
 		display: inline-block
 		vertical-align: middle
 		box-shadow: 0 10px 20px rgba(#575757, .1)
 		width: 100%
-		max-width: 270px
+		max-width: 350px
 		font-size: 18px
 		color: #000
 		font-family: $font2_500
 		position: relative
 		overflow: hidden
 		margin: 0
+		display: table
 	&__call
-		display: none
+		button
+			background-color: #5f89fc
+			color: #fff
+			padding: 10px 10px
+			border-radius: 3px
+			border: none
+			text-transform: uppercase
+			font-weight: 700
 		strong
 			color: $blue
 	&__service
-		padding: 23px 33px
+		padding: 20px 30px
 		strong
 			font-size: 36px
 			display: block
@@ -386,9 +395,9 @@ select
 				right: -6px
 				&::before
 					content: '\e913'
-	&__discount
-		margin-left: 60px
-		padding: 35px 95px 35px 33px
+	&__call
+		margin-top: 15px
+		padding: 30px 90px 30px 30px
 		strong
 			font-size: 36px
 			position: absolute
@@ -405,21 +414,6 @@ select
 			background-image: url(../img/hero-discount-bg.png)
 			width: 173px
 			height: 172px
-	&__footer
-		margin-top: 45px
-	&__phones
-		display: inline-block
-		vertical-align: middle
-	&__phone
-		font-size: 30px
-		font-weight: 700
-		color: #244c91
-		text-decoration: none
-		margin-left: 50px
-		display: block
-	&__button
-		width: auto
-		margin: 0
 	&__right
 		opacity: .99
 		padding: 0 45px
@@ -427,8 +421,8 @@ select
 			content: ''
 			position: absolute
 			z-index: -1
-			top: -85px
-			bottom: -50px
+			top: -60px
+			bottom: -40px
 			left: 0
 			width: 100%
 			opacity: .85
@@ -471,7 +465,7 @@ select
 			i::after
 				transform: rotate(180deg)
 	&__form
-		margin-top: 80px
+		margin-top: 50px
 		&-title
 			font-size: 24px
 			margin: 0 0 40px
@@ -575,6 +569,7 @@ select
 		display: flex
 		justify-content: space-between
 		margin: -15px
+		flex-wrap: wrap
 	&__item
 		display: inline-block
 		width: 30%
@@ -616,9 +611,10 @@ select
 		line-height: 1.2
 		padding: 35px		
 		padding-right: 60%
-		margin: 30px 0 0
+		margin: 15px 15px 0
 		position: relative
 		overflow: hidden
+		flex: 3
 		small
 			display: none
 		&-btn
@@ -651,8 +647,6 @@ select
 		margin-left: -1000px
 		margin-top: -340px
 		background-image: url(../img/reviews-bg.png)
-	&__form
-		display: none
 	&__title
 		color: #244c91
 		font-size: 35px

@@ -57,6 +57,10 @@ body {
   font-size: 14px;
   background-color: #fff;
   color: #575757;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body.fixed {
@@ -99,7 +103,7 @@ select {
 
 .container, .header__inner, .header__nav {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1070px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -194,7 +198,7 @@ select {
 }
 
 .header__top {
-  padding: 30px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #909090;
 }
 
@@ -382,7 +386,7 @@ select {
 
 .hero {
   background-color: #f6f3fe;
-  padding: 85px 0 50px;
+  padding: 60px 0 40px;
   position: relative;
   overflow: hidden;
   opacity: .99;
@@ -415,24 +419,24 @@ select {
 
 .hero__title {
   line-height: 1;
-  font-size: 50px;
+  font-size: 45px;
   color: #244c91;
-  margin: 0 0 50px;
+  margin: 0 0 40px;
   font-family: "PTRootUI-Bold", sans-serif;
   text-transform: uppercase;
 }
 
 .hero__title strong {
-  font-size: 42px;
+  font-size: 37px;
   text-transform: lowercase;
   display: block;
-  margin-top: 8px;
+  margin-top: 5px;
   color: #2f353f;
   font-weight: 400;
 }
 
 .hero__list {
-  margin: 50px 0;
+  margin: 30px 0;
   font-size: 18px;
 }
 
@@ -460,7 +464,7 @@ select {
   z-index: -1;
 }
 
-.hero__service, .hero__discount {
+.hero__service, .hero__call {
   background-color: #fff;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -469,17 +473,25 @@ select {
   -webkit-box-shadow: 0 10px 20px rgba(87, 87, 87, 0.1);
   box-shadow: 0 10px 20px rgba(87, 87, 87, 0.1);
   width: 100%;
-  max-width: 270px;
+  max-width: 350px;
   font-size: 18px;
   color: #000;
   font-family: "PTRootUI-Medium", sans-serif;
   position: relative;
   overflow: hidden;
   margin: 0;
+  display: table;
 }
 
-.hero__call {
-  display: none;
+.hero__call button {
+  background-color: #5f89fc;
+  color: #fff;
+  padding: 10px 10px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .hero__call strong {
@@ -487,7 +499,7 @@ select {
 }
 
 .hero__service {
-  padding: 23px 33px;
+  padding: 20px 30px;
 }
 
 .hero__service strong {
@@ -549,12 +561,12 @@ select {
   content: '\e913';
 }
 
-.hero__discount {
-  margin-left: 60px;
-  padding: 35px 95px 35px 33px;
+.hero__call {
+  margin-top: 15px;
+  padding: 30px 90px 30px 30px;
 }
 
-.hero__discount strong {
+.hero__call strong {
   font-size: 36px;
   position: absolute;
   top: 50%;
@@ -565,7 +577,7 @@ select {
   color: #5f89fc;
 }
 
-.hero__discount::after {
+.hero__call::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -574,29 +586,6 @@ select {
   background-image: url(../img/hero-discount-bg.png);
   width: 173px;
   height: 172px;
-}
-
-.hero__footer {
-  margin-top: 45px;
-}
-
-.hero__phones {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.hero__phone {
-  font-size: 30px;
-  font-weight: 700;
-  color: #244c91;
-  text-decoration: none;
-  margin-left: 50px;
-  display: block;
-}
-
-.hero__button {
-  width: auto;
-  margin: 0;
 }
 
 .hero__right {
@@ -608,8 +597,8 @@ select {
   content: '';
   position: absolute;
   z-index: -1;
-  top: -85px;
-  bottom: -50px;
+  top: -60px;
+  bottom: -40px;
   left: 0;
   width: 100%;
   opacity: .85;
@@ -674,7 +663,7 @@ select {
 }
 
 .hero__form {
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .hero__form-title {
@@ -811,6 +800,9 @@ select {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin: -15px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .guarantees__item {
@@ -872,9 +864,13 @@ select {
   line-height: 1.2;
   padding: 35px;
   padding-right: 60%;
-  margin: 30px 0 0;
+  margin: 15px 15px 0;
   position: relative;
   overflow: hidden;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
 }
 
 .guarantees__promo small {
@@ -916,10 +912,6 @@ select {
   margin-left: -1000px;
   margin-top: -340px;
   background-image: url(../img/reviews-bg.png);
-}
-
-.reviews__form {
-  display: none;
 }
 
 .reviews__title {
@@ -2287,7 +2279,7 @@ select {
     top: 0;
     width: 100%;
   }
-  .header__inner, .header__logo, .header__phone {
+  .header__inner, .header__phone {
     display: block;
     width: auto;
   }
@@ -2305,6 +2297,7 @@ select {
   .header__logo {
     padding: 15px;
     font-size: 0;
+    display: inline-block;
   }
   .header__nav {
     padding: 0;
@@ -2416,7 +2409,7 @@ select {
     margin-right: 12px;
   }
   .hero {
-    padding: 115px 0 15px;
+    padding: 130px 0 30px;
   }
   .hero__right {
     display: none;
@@ -2427,7 +2420,7 @@ select {
   }
   .hero__title {
     font-size: 22px !important;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   .hero__title strong {
     font-size: 21px;
@@ -2440,7 +2433,7 @@ select {
   .hero__list {
     font-size: 14px;
     padding-right: 80px;
-    margin: 15px 0;
+    margin: 30px 0;
   }
   .hero__list li {
     padding-left: 18px;
@@ -2464,52 +2457,6 @@ select {
   }
   .hero__service {
     padding: 12px 25px;
-  }
-  .hero__call {
-    padding: 25px 15px;
-    display: table;
-    margin: 15px 0 0;
-    -webkit-box-shadow: 0 10px 20px rgba(87, 87, 87, 0.1);
-    box-shadow: 0 10px 20px rgba(87, 87, 87, 0.1);
-    background-color: #fff;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    font-family: "PTRootUI-Medium", sans-serif;
-    font-size: 18px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero__call strong {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-  .hero__call button {
-    background-color: #5f89fc;
-    color: #fff;
-    padding: 10px 10px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .hero__call::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -45px;
-    margin-top: -86px;
-    background-image: url(../img/hero-discount-bg.png);
-    width: 173px;
-    height: 172px;
-  }
-  .hero__discount {
-    display: none;
   }
   .hero__footer {
     display: none;
@@ -2583,12 +2530,12 @@ select {
   }
   .guarantees__list {
     display: block;
-    margin: 0 -15px;
+    margin: 0;
   }
   .guarantees__item {
     width: auto;
     display: block;
-    padding: 20px 100px 10px 15px;
+    padding: 20px 100px 10px 0;
     text-align: left;
     background-position: right center;
     margin: 0;
@@ -2612,102 +2559,38 @@ select {
     background-image: url(../img/guarantees-img-3-mobile.png);
   }
   .guarantees__promo {
-    display: none;
-  }
-  .reviews {
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
-  }
-  .reviews__title {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  .reviews__list {
+    background-color: #7e6fb4;
+    background-image: url(../img/guarantees-promo-bg-mobile.png);
+    background-position: right bottom;
+    padding: 20px 25px;
+    font-size: 18px;
     margin: 0;
+    display: block;
+    float: left;
   }
-  .reviews__item {
-    margin: 0;
-    padding: 20px;
+  .guarantees__promo small {
+    font-size: 14px;
+    display: block;
+    margin-top: 2px;
   }
-  .reviews__text {
+  .guarantees__promo-btn {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 25px 0 0 -25px;
+    -webkit-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+    color: #5d75d7;
+    background-color: #fff;
     font-size: 16px;
   }
-  .reviews__stars {
-    font-size: 14px;
-    margin-bottom: 10px;
+  .guarantees__promo-btn:hover {
+    -webkit-transform: translateX(-15px);
+    -ms-transform: translateX(-15px);
+    transform: translateX(-15px);
   }
-  .reviews__recomend {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  .reviews__recomend::before {
-    font-size: 15px;
-    padding: 5px;
-  }
-  .reviews .slick-track {
-    display: block;
-  }
-  .reviews__form {
-    display: block;
-    text-align: center;
-    padding: 25px 15px 5px;
-    margin: 55px -270px 0;
-    position: relative;
-    overflow: visible;
-  }
-  .reviews__form::before {
-    content: '';
-    width: 80px;
-    height: 80px;
-    background-image: url(../img/callback-icon.png);
-    -webkit-background-size: cover;
-    background-size: cover;
-    position: absolute;
-    z-index: 5;
-    left: 50%;
-    margin-left: -40px;
-    top: -35px;
-  }
-  .reviews__form-caption {
-    width: 100%;
-    font-size: 18px;
-    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
-    color: #244c91;
-    margin: 0 0 15px;
-    padding: 20px 280px 15px;
-    background-color: #ffffff;
-  }
-  .reviews__form-discount {
-    color: #244c91;
-    margin: 0 auto;
-  }
-  .reviews__form-discount::after {
+  .reviews {
     display: none;
-  }
-  .reviews__form-field {
-    margin-top: 15px;
-    max-width: 295px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .reviews__form-btn {
-    margin-left: 0;
-    margin-top: 10px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    max-width: 295px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .reviews__privacypolicy {
-    display: block;
-    color: #555;
-    margin: 15px auto 0;
-    font-size: 11px;
-    max-width: 295px;
   }
   .breakdowns {
     display: none;
@@ -2827,7 +2710,7 @@ select {
   }
   .scheme__form-caption {
     width: 100%;
-    font-size: 18px;
+    font-size: 15px;
     -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
     color: #244c91;

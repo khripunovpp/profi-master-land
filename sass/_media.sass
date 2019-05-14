@@ -63,7 +63,6 @@
 		top: 0
 		width: 100%
 		&__inner,
-		&__logo,
 		&__phone
 			display: block
 			width: auto
@@ -78,6 +77,7 @@
 		&__logo
 			padding: 15px
 			font-size: 0
+			display: inline-block
 		&__nav
 			padding: 0
 		&__burger
@@ -168,7 +168,7 @@
 				margin-right: 12px
 
 	.hero
-		padding: 115px 0 15px
+		padding: 130px 0 30px
 		&__right
 			display: none
 		&__left
@@ -176,7 +176,7 @@
 			position: relative
 		&__title
 			font-size: 22px !important
-			margin-bottom: 15px
+			margin-bottom: 30px
 			strong
 				font-size: 21px
 				margin-top: 5px
@@ -186,7 +186,7 @@
 		&__list
 			font-size: 14px
 			padding-right: 80px
-			margin: 15px 0
+			margin: 30px 0
 			li
 				padding-left: 18px
 				display: block !important
@@ -206,41 +206,31 @@
 		&__service
 			padding: 12px 25px
 		&__call
-			padding: 25px 15px
-			display: table
-			margin: 15px 0 0
-			box-shadow: 0 10px 20px rgba(#575757, .1)
-			background-color: #fff
-			border-radius: 4px
-			font-family: $font2_500
-			font-size: 18px
-			width: 100%
-			position: relative
-			overflow: hidden
-			strong
-				position: absolute
-				top: 50%
-				right: 15px
-				transform: translateY(-50%)
-			button
-				background-color: #5f89fc
-				color: #fff
-				padding: 10px 10px
-				border-radius: 3px
-				border: none
-				text-transform: uppercase
-				font-weight: 700
-			&::after
-				content: ''
-				position: absolute
-				top: 50%
-				right: -45px
-				margin-top: -86px
-				background-image: url(../img/hero-discount-bg.png)
-				width: 173px
-				height: 172px
-		&__discount
-			display: none
+			// padding: 25px 15px
+			// display: table
+			// margin: 15px 0 0
+			// box-shadow: 0 10px 20px rgba(#575757, .1)
+			// background-color: #fff
+			// border-radius: 4px
+			// font-family: $font2_500
+			// font-size: 18px
+			// width: 100%
+			// position: relative
+			// overflow: hidden
+			// strong
+			// 	position: absolute
+			// 	top: 50%
+			// 	right: 15px
+			// 	transform: translateY(-50%)
+			// &::after
+			// 	content: ''
+			// 	position: absolute
+			// 	top: 50%
+			// 	right: -45px
+			// 	margin-top: -86px
+			// 	background-image: url(../img/hero-discount-bg.png)
+			// 	width: 173px
+			// 	height: 172px
 		&__footer
 			display: none
 		&--main
@@ -309,11 +299,11 @@
 		padding: 20px 0
 		&__list
 			display: block
-			margin: 0 -15px
+			margin: 0
 		&__item
 			width: auto
 			display: block
-			padding: 20px 100px 10px 15px
+			padding: 20px 100px 10px 0
 			text-align: left
 			background-position: right center
 			margin: 0
@@ -331,83 +321,32 @@
 			&--3
 				background-image: url(../img/guarantees-img-3-mobile.png)
 		&__promo
-			display: none
+			background-color: #7e6fb4
+			background-image: url(../img/guarantees-promo-bg-mobile.png)
+			background-position: right bottom
+			padding: 20px 25px
+			font-size: 18px
+			margin: 0
+			display: block
+			float: left
+			small
+				font-size: 14px
+				display: block
+				margin-top: 2px
+			&-btn
+				position: relative
+				top: auto
+				right: auto
+				margin: 25px 0 0 -25px
+				border-radius: 0 6px 6px 0
+				color: #5d75d7
+				background-color: #fff
+				font-size: 16px
+				&:hover
+					transform: translateX(-15px)
 
 	.reviews
-		padding: 20px 0
-		border-bottom: 1px solid #ddd
-		&__title
-			font-size: 20px
-			margin-bottom: 15px
-		&__list
-			margin: 0
-		&__item
-			margin: 0
-			padding: 20px
-		&__text
-			font-size: 16px
-		&__stars
-			font-size: 14px
-			margin-bottom: 10px
-		&__recomend
-			font-size: 18px
-			margin-bottom: 10px
-			&::before
-				font-size: 15px
-				padding: 5px
-		.slick-track
-			display: block
-		&__form
-			display: block
-			text-align: center
-			padding: 25px 15px 5px
-			margin: 55px -270px 0
-			position: relative
-			overflow: visible
-			&::before
-				content: ''
-				width: 80px
-				height: 80px
-				background-image: url(../img/callback-icon.png)
-				background-size: cover
-				position: absolute
-				z-index: 5
-				left: 50%
-				margin-left: -40px
-				top: -35px
-			&-caption
-				width: 100%
-				font-size: 18px
-				box-shadow: 0 5px 5px rgba(0,0,0,.08)
-				color: #244c91
-				margin: 0 0 15px
-				padding: 20px 280px 15px
-				background-color: #ffffff
-			&-discount
-				color: #244c91
-				margin: 0 auto
-				&::after
-					display: none
-			&-field
-				margin-top: 15px
-				max-width: 295px
-				display: block
-				margin-left: auto
-				margin-right: auto
-			&-btn
-				margin-left: 0
-				margin-top: 10px
-				border-radius: 6px
-				max-width: 295px
-				display: block
-				margin-left: auto
-				margin-right: auto
-		&__privacypolicy
-			display: block
-			color: #555
-			margin: 15px auto 0
-			font-size: 11px
-			max-width: 295px
+		display: none
 
 	.breakdowns
 		display: none
@@ -506,7 +445,7 @@
 				top: -35px
 			&-caption
 				width: 100%
-				font-size: 18px
+				font-size: 15px
 				box-shadow: 0 5px 5px rgba(0,0,0,.08)
 				color: #244c91
 				margin: 0 0 15px
