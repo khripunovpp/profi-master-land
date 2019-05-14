@@ -307,13 +307,14 @@ var sliders = function() {
         dots: true,
         infinite: false,
         adaptiveHeight: true,
-        filter: $(".guarantees__item--3")
+        filter: ':not(.guarantees__item--3)'
     })
 }
 
 
 function mobileSlick(el, op) {
     el.slick(op);
+    if (op.filter) el.slick('slickFilter', op.filter);
 
     if ($(window).width() > 991) _unslick()
 
@@ -321,12 +322,14 @@ function mobileSlick(el, op) {
         if ($(window).width() > 991) {
             _unslick()
         } else if (!el.hasClass('slick-initialized')) {
-            return el.slick(op);
+            el.slick(op);
+            if (op.filter) el.slick('slickFilter', op.filter);
         }
     });
 
     function _unslick() {
         if (el.hasClass('slick-initialized')) {
+            el.slick('slickUnfilter');
             el.slick('unslick');
         }
     }
